@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png" />
+    <title>Expérimentations en Javascript</title>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <article class="atelier">
+        <h2>Atelier 1.4 : Interagir avec la page</h2>
+        <form id="form1.4" name="formulaire1.4" action="">
+
+            <input type="submit" value="Confirmer">
+        </form>
+
+    </article>
+    <article class="atelier">
+        <h2>Atelier 1.5 : Gestion des évènements</h2>
+        <button id="btn_methode_1" onclick="alert('Bonjour le monde');"">Méthode 1</button>
+        <button id=" btn_methode_2" onclick="helloworld()">Méthode 2</button>
+        <button id="btn_methode_3">Méthode 3</button>
+        <button id="btn_methode_4">Méthode 4</button>
+    </article>
+
+    <form id="form" action="" method="post" enctype="multipart/form-data">
+        <input type="date" name="retrait">
+        <h2 id="commander">Commander</h2>
+        <fieldset>
+            <legend>Selctionner une formule</legend>
+            <p>nbr1</p>
+            <input id="nbr1" type="number" name="nbr1" />
+            <p>nbr2</p>
+            <input id="nbr2" type="number" name="nbr2" /></br>
+            <output id="res">res</output></br>
+            <input type="submit" name="bouton" value="Envoyer">
+        </fieldset>
+    </form>
+
+    <button id="btn_prev">previous</button>
+    <button id="btn_next">next</button></br>
+    <img  id="image" src="./images/Bean.webp" />
+</body>
+
+</html>
