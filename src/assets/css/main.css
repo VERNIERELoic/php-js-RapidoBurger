@@ -60,3 +60,10 @@ li a:hover:not(.active) {
 .active {
     background-color: salmon;
 }
+
+footer {
+    padding: 40px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
