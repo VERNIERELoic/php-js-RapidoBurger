@@ -10,3 +10,25 @@ CREATE TABLE user
     zip_code VARCHAR(10)
 );
 
+CREATE TABLE order
+(
+    id INT PRIMARY KEY NOT NULL,
+    date DATE,
+    FOREIGN KEY (id) REFERENCES user (id)
+);
+
+CREATE TABLE burger
+(
+    id INT PRIMARY KEY NOT NULL,
+    bred VARCHAR(30),
+    veg VARCHAR(30),
+    sauce VARCHAR(30),
+    meet VARCHAR(30),
+    FOREIGN KEY (id) REFERENCES burger (id)
+);
+
+CREATE TABLE 
+(
+
+);
+

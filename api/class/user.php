@@ -1,6 +1,6 @@
 <?php
 
-include("db_connect.php");
+include("../connection/db_connect.php");
 
 class User
 {

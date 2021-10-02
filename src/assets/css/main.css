@@ -62,8 +62,10 @@ li a:hover:not(.active) {
 }
 
 footer {
-    padding: 40px;
-    display: block;
-    margin: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 50px;
     text-align: center;
 }

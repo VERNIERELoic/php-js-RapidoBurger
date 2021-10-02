@@ -2,7 +2,7 @@ body {
     background: rgb(21, 22, 26);
 }
 
-#container {
+.login {
     width: 400px;
     margin: 0 auto;
     margin-top: 10%;
@@ -16,14 +16,13 @@ form {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-#container h1 {
+.login h1 {
     width: 38%;
     margin: 0 auto;
     padding-bottom: 10px;
 }
 
-input[type=text],
-input[type=password] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -33,7 +32,7 @@ input[type=password] {
 }
 
 input[type=submit] {
-    background-color: rgb(21, 22, 26);
+    background-color: #576de9;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -43,7 +42,18 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #DCDCDC;
-    color: rgb(21, 22, 26);
+    background-color: #4b5fd1;
+    color: rgb(255, 255, 255);
     border: 1px solid rgb(21, 22, 26);
+}
+
+.login a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 0;
+}
+
+.login a:hover {
+    color: #4b5fd1;
+    text-decoration: none;
 }
