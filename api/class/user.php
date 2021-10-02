@@ -39,7 +39,7 @@ class User
         try {
             $sql = "INSERT INTO user (id, name, username, email, birthday, country, city, zip_code)
                 VALUES ($user->id, $user->name, $user->username, $user->birthday, $user->password, $user->city, 
-                $user->country, $user->zip_code, $user->email)";
+                $user->country, $user->zip_code, $user->email, $user->password)";
             $this->bdd->exec($sql);
         } catch (Exception $e) {
             die('Erreur :' . $e->getMessage());
@@ -67,7 +67,8 @@ class User
                         birthday = $user->birthday, 
                         countrie = $user->country,
                         city = $user->city, 
-                        zip_code = $user->zip_code
+                        zip_code = $user->zip_code,
+                        password = $user->password,
                     WHERE id = $this->id";
             $this->bdd->exec($sql);
         } catch (Exception $e) {
