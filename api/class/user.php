@@ -5,7 +5,7 @@ include("../connection/db_connect.php");
 class User
 {
     private $id;
-    private $name;
+    private $full_name;
     private $username;
     private $birthday;
     private $password;
@@ -15,10 +15,21 @@ class User
     private $email;
     private $bdd;
 
+    public function setUser($full_name,$username, $birthday, $password, $city, $country, $zip_code, $email)
+    {
+        $this->full_name = $full_name;
+        $this->username = $username;
+        $this->birthday = $birthday;
+        $this->password = $password;
+        $this->city = $city;
+        $this->country = $country;
+        $this->zip_code = $zip_code;
+        $this->email = $email;
+    }
 
     public function getUsers()
     {
-        $response =  $this->bdd->query('SELECT * FROM user');
+        $response =  $this->bdd->query('SELECT * FROM users');
         $data = $response->fetchAll();
         return $data;
     }
@@ -26,7 +37,7 @@ class User
     public function getUser($id)
     {
         try {
-            $response =  $this->bdd->query('SELECT * FROM user WHERE id = ' + $id);
+            $response =  $this->bdd->query('SELECT * FROM users WHERE id = ' + $id);
             $data = $response->fetchAll();
             return $data;
         } catch (Exception $e) {
@@ -36,11 +47,13 @@ class User
 
     public function insertUser($user)
     {
+        $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
         try {
-            $sql = "INSERT INTO user (id, name, username, email, birthday, country, city, zip_code)
-                VALUES ($user->id, $user->name, $user->username, $user->birthday, $user->password, $user->city, 
-                $user->country, $user->zip_code, $user->email, $user->password)";
+            $sql = "INSERT INTO users (id, name, username, email, birthday, country, city, zip_code)
+                VALUES ($user->id, $user->full_name, $user->username, $user->birthday, $user->password, $user->city, 
+                $user->country, $user->zip_code, $user->email, $user->$pass_hache)";
             $this->bdd->exec($sql);
+            var_dump("ok");
         } catch (Exception $e) {
             die('Erreur :' . $e->getMessage());
         }
@@ -49,7 +62,7 @@ class User
     public function dropUser($user)
     {
         try {
-            $sql = "DELETE FROM user WHERE id=$this.id";
+            $sql = "DELETE FROM users WHERE id=$this.id";
             $this->bdd->exec($sql);
         } catch (Exception $e) {
             die('Erreur :' . $e->getMessage());
@@ -59,9 +72,9 @@ class User
     public function update($user)
     {
         try {
-            $sql = "UPDATE user
+            $sql = "UPDATE users
                     SET id = $user->id, 
-                        name = $user->name, 
+                        name = $user->full_name, 
                         username = $user->username, 
                         email = $user->email, 
                         birthday = $user->birthday, 
