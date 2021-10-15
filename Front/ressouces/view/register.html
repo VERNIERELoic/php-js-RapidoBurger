@@ -14,8 +14,8 @@
     <form action="api/session/register.php" method="POST">
         <h1>Formulaire d'inscription</h1>
 
-        <label><b>Nom complet</b></label>
-        <input type="text" placeholder="Entrer votre nom complet" name="full_name" required>
+        <label><b>Nom</b></label>
+        <input type="text" placeholder="Entrer votre nom" name="name" required>
 
         <label><b>Nom d'utilisateur</b></label>
         <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
@@ -33,13 +33,13 @@
         <input type="date" " name="birthday" required>
 
         <label><b>Pays</b></label>
-        <input type="text" placeholder="Votre pays" name="country" required>
+        <input type="text" placeholder="Votre pays" name="country">
 
         <label><b>Ville</b></label>
-        <input type="text" placeholder="Votre ville"" name="city" required>
+        <input type="text" placeholder="Votre ville"" name="city" >
 
         <label><b>Code postal</b></label>
-        <input type="number" placeholder="Entrer votre code postal" name="zip_code" required>
+        <input type="number" placeholder="Entrer votre code postal" name="zip_code">
 
         <input type="submit" id='submit' value='Register'>
     </form>
