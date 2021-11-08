@@ -1,6 +1,6 @@
 <?php
 namespace App\Models;
-include("../connection/db_connect.php");
+require_once("../connection/db_connect.php");
 
 class Burger
 {

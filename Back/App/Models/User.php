@@ -1,6 +1,6 @@
 <?php
+
 namespace App\Models;
-use App\Controller\UserController;
 
 require_once("../connection/db_connect.php");
 
@@ -18,5 +18,4 @@ class User
         $this->password = $password;
         $this->email = $email;
     }
-
 }

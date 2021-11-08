@@ -4,20 +4,24 @@ namespace App\Connection;
 
 class Databaseconnection
 {
-  private $dbhost = "127.0.0.1";
-  private $dbname = "rapido";
-  private $dbuser = "loic";
-  private $dbpass = "toor";
+  private static $dbhost = "127.0.0.1";
+  private static $dbname = "rapido";
+  private static $dbuser = "loic";
+  private static $dbpass = "toor";
 
-  public function getConnection()
+  private $bdd;
+
+  public static function getConnection()
   {
-    try {
-      $bdd = new \PDO("mysql:host=$this->dbhost;dbname=$this->dbname", $this->dbuser, $this->dbpass, array(
-        \PDO::ATTR_PERSISTENT => true
-      ));
-      return $bdd;
-    } catch (\Exception $e) {
-      die('Erreur : ' . $e->getMessage());
+    if (is_null(self::$bdd)) {
+      try {
+        self::$bdd = new \PDO("mysql:host=" + self::$dbhost + ",dbname=" + self::$dbname , self::$dbuser, self::$dbpass, array(
+          \PDO::ATTR_PERSISTENT => true
+        ));
+        return self::$bdd;
+      } catch (\Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+      }
     }
   }
 }
