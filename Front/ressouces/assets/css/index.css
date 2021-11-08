@@ -124,10 +124,3 @@ input[type=submit]:hover {
     background-color: gray;
     width: 20%;
 }
-
-footer {
-    padding: 40px;
-    display: block;
-    margin: auto;
-    text-align: center;
-}
