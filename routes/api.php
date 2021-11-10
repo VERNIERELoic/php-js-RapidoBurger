@@ -1,3 +1,3 @@
 <?php
 $router->setNamespace('App\Controllers');
-$router->get('/', "AuthController@viewRegister");
+$router->get('/', "HomeController@viewHome");
