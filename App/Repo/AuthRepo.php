@@ -20,8 +20,8 @@ class AuthRepo
                 $userrepo = new UserRepo();
                 $user = $userrepo->setUser(
                     $_POST['username'],
-                    password_hash($_POST['password'], PASSWORD_DEFAULT),
-                    $_POST['email']
+                    $_POST['email'],
+                    password_hash($_POST['password'], PASSWORD_DEFAULT)
                 );
     
                 $userrepo->insertUser($user);
