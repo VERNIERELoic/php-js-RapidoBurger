@@ -6,6 +6,7 @@ use App\Controllers\UserController;
 use App\Models\User;
 use App\Repo\UserRepo;
 use App\Renderer;
+use App\Repo\AuthRepo;
 
 class AuthController extends Controller
 {
@@ -14,5 +15,12 @@ class AuthController extends Controller
         echo Renderer::render("register.php");
         return;
     }
+    public function register(){
+        $authrepo = new AuthRepo();
+        $authrepo->register();
+
+        return;
+    }
+
 
 }

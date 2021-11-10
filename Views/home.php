@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once ('header.php')?>
+
+<?php include ("header.php") ?>
+
 <body>
 
     <head>
@@ -10,8 +12,8 @@
                 <li><a href="#visiter">Visiter</a></li>
                 <li><a href="#commander">Commander</a></li>
                 <div class="nav-log">
-                    <li class="nav-login"><a class="log" href="connexion.html">Se connecter</a></li>
-                    <li class="nav-suscribe"><a class="log" href="register.html">S'inscrire</a></li>
+                    <li class="nav-login"><a class="log" href="/public/connexion">Se connecter</a></li>
+                    <li class="nav-suscribe"><a class="log" href="/public/register">S'inscrire</a></li>
                 </div>
 
             </ul>

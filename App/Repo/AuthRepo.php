@@ -5,7 +5,7 @@ namespace App\Repo;
 use App\Connection\Databaseconnection;
 use APP\Repo\UserRepo;
 
-abstract class AuthRepo
+class AuthRepo
 {
 
     public function __construct()
@@ -26,6 +26,7 @@ abstract class AuthRepo
     
                 $userrepo->insertUser($user);
             }
+            return $user;
         }
     
         public function login($username,$password)
