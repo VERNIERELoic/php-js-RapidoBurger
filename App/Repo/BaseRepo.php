@@ -7,12 +7,12 @@ use App\Connection\Databaseconnection;
 abstract class BaseRepo
 {
 
-    protected $bdd;
+    protected static $bdd;
 
     public function __construct()
     {
         $connection = new Databaseconnection();
-        $bdd = $connection->getConnection();
-        return $bdd;
+        self::$bdd = $connection->getConnection();
+        return self::$bdd;
     }
 }

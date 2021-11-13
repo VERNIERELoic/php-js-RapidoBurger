@@ -16,9 +16,6 @@
         <label><b>Mot de passe</b></label>
         <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
-        <label><b>Saisir de nouveau le mot de passe</b></label>
-        <input type="password" placeholder="Entrer le mot de passe" name="passwordverify" required>
-
         <input type="submit" id='submit' value='Register'>
     </form>
 </div>

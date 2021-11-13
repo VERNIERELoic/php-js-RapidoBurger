@@ -2,8 +2,7 @@
 
 namespace App\Repo;
 
-use App\Connection\Databaseconnection;
-use APP\Models\User;
+use App\Models\User;
 
 class UserRepo extends BaseRepo
 {
@@ -36,9 +35,10 @@ class UserRepo extends BaseRepo
 
     public function insertUser($user)
     {
-        $sql = "INSERT INTO users (id, username, email, password) VALUES (?,?,?,?)";
-        $req = $this->bdd->prepare($sql);
+        $sql = "INSERT INTO users (username, email, password) VALUES (?,?,?)";
+        $req = self::$bdd->prepare($sql);
         $response = $req->execute(array($user->username, $user->email, $user->password));
+        return $response;
     }
 
     public function dropUser($user)
