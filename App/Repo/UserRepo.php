@@ -2,8 +2,7 @@
 
 namespace App\Repo;
 
-use App\Connection\Databaseconnection;
-use APP\Models\User;
+use App\Models\User;
 
 class UserRepo extends BaseRepo
 {
@@ -36,10 +35,10 @@ class UserRepo extends BaseRepo
 
     public function insertUser($user)
     {
-
-        $sql = "INSERT INTO users ( name, username, email, birthday, country, city, zip_code, password) VALUES (?,?,?,?,?,?,?,?)";
-        $req = $this->bdd->prepare($sql);
-        $response = $req->execute(array($user->name, $user->username, $user->email, $user->birthday, $user->country, $user->city, $user->zip_code, $user->password));
+        $sql = "INSERT INTO users (username, email, password) VALUES (?,?,?)";
+        $req = self::$bdd->prepare($sql);
+        $response = $req->execute(array($user->username, $user->email, $user->password));
+        return $response;
     }
 
     public function dropUser($user)
@@ -51,14 +50,9 @@ class UserRepo extends BaseRepo
     public function update($user)
     {
         $sql = "UPDATE users
-                    SET id = $user->id, 
-                        name = $user->name, 
+                    SET id = $user->id,
                         username = $user->username, 
                         email = $user->email, 
-                        birthday = $user->birthday, 
-                        countrie = $user->country,
-                        city = $user->city, 
-                        zip_code = $user->zip_code,
                         password = $user->password,
                     WHERE id = $this->id";
         $this->bdd->exec($sql);

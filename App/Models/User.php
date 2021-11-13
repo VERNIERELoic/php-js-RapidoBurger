@@ -2,20 +2,18 @@
 
 namespace App\Models;
 
-require_once("../connection/db_connect.php");
-
 class User
 {
     // Attributs de la class User
-    private $id;
-    private $username;
-    private $password;
-    private $email;
+    public $id;
+    public $username;
+    public $password;
+    public $email;
 
-    public function __construct($username, $password, $email)
+    public function __construct($username, $email, $password)
     {
         $this->username = $username;
-        $this->password = $password;
         $this->email = $email;
+        $this->password = $password;
     }
 }

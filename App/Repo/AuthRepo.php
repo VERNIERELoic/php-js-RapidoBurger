@@ -2,10 +2,9 @@
 
 namespace App\Repo;
 
-use App\Connection\Databaseconnection;
-use APP\Repo\UserRepo;
+use App\Repo\UserRepo;
 
-abstract class AuthRepo
+class AuthRepo extends BaseRepo
 {
 
     public function __construct()
@@ -15,17 +14,19 @@ abstract class AuthRepo
         // Insert user in BDD
         public function register()
         {
-    
-            if (isset($_POST['name'])) {
+            var_dump("before isset");
+            if (isset($_POST['username'])) {
+                var_dump("isset true");
                 $userrepo = new UserRepo();
                 $user = $userrepo->setUser(
                     $_POST['username'],
-                    password_hash($_POST['password'], PASSWORD_DEFAULT),
-                    $_POST['email']
+                    $_POST['email'],
+                    password_hash($_POST['password'], PASSWORD_DEFAULT)
                 );
-    
+
                 $userrepo->insertUser($user);
             }
+            return $user;
         }
     
         public function login($username,$password)

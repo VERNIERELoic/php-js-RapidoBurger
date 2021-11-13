@@ -9,13 +9,14 @@ class Databaseconnection
   private static $dbuser = "loic";
   private static $dbpass = "toor";
 
-  private $bdd;
+  private static $bdd;
 
   public static function getConnection()
   {
+    var_dump("before getconnect");
     if (is_null(self::$bdd)) {
       try {
-        self::$bdd = new \PDO("mysql:host=" + self::$dbhost + ",dbname=" + self::$dbname , self::$dbuser, self::$dbpass, array(
+        self::$bdd = new \PDO("mysql:host=" . self::$dbhost . ";dbname=" . self::$dbname, self::$dbuser, self::$dbpass, array(
           \PDO::ATTR_PERSISTENT => true
         ));
         return self::$bdd;

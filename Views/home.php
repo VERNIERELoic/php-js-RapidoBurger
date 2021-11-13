@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Rapid'O</title>
-
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/index.css" media="screen" />
-</head>
+<?php include ("header.php") ?>
 
 <body>
 
@@ -24,8 +12,8 @@
                 <li><a href="#visiter">Visiter</a></li>
                 <li><a href="#commander">Commander</a></li>
                 <div class="nav-log">
-                    <li class="nav-login"><a class="log" href="connexion.html">Se connecter</a></li>
-                    <li class="nav-suscribe"><a class="log" href="register.html">S'inscrire</a></li>
+                    <li class="nav-login"><a class="log" href="/public/connexion">Se connecter</a></li>
+                    <li class="nav-suscribe"><a class="log" href="/public/register">S'inscrire</a></li>
                 </div>
 
             </ul>

@@ -1,6 +1,6 @@
 <?php
+
 namespace App\Models;
-require_once("../connection/db_connect.php");
 
 class Burger
 {
@@ -13,5 +13,4 @@ class Burger
     {
         $this->bdd = $bdd;
     }
-
 }
