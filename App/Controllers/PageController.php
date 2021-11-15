@@ -10,8 +10,9 @@ class PageController
         echo Renderer::render("home.php");
         return;
     }
-    public function viewConnexion(){
-        echo Renderer::render("connexion.php");
+    public function viewLogin(){
+        $error = true;
+        echo Renderer::render("login.php", compact('error'));
         return;
     }
     public function viewRegister(){

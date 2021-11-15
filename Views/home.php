@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include ("header.php") ?>
+<?php include("header_base.php") ?>
 
 <body>
 
-    <head>
-        <nav>
-            <ul class="navbar">
-                <li><a href="#nav">Accueil</a></li>
-                <li><a href="#visiter">Visiter</a></li>
-                <li><a href="#commander">Commander</a></li>
-                <div class="nav-log">
-                    <li class="nav-login"><a class="log" href="/public/connexion">Se connecter</a></li>
-                    <li class="nav-suscribe"><a class="log" href="/public/register">S'inscrire</a></li>
-                </div>
+    <div class="banner-container">
 
-            </ul>
-        </nav>
-        <div class="banner-container">
+    </div>
+    <h1 class="title">BURGER HOUSE</h1>
 
-        </div>
-        <h1 class="title">BURGER HOUSE</h1>
-    </head>
     <h1 class="office-banner">
         LIMITED QUANTITY.
     </h1>

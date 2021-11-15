@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include ("header.php") ?>
+<?php include("header_login.php") ?>
 
 <div class="register">
     <form action="/public/register" method="POST">
@@ -19,6 +19,7 @@
         <input type="submit" id='submit' value='Register'>
     </form>
 </div>
+
 <body>
     <footer>
         <a>VERNIERE Loic - All right reserved 2021</a>

@@ -11,6 +11,5 @@ class Burger
 
     public function __construct($bdd)
     {
-        $this->bdd = $bdd;
     }
 }

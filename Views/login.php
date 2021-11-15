@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include ("header.php") ?>
+<?php include("header_login.php"); ?>
 
 <body>
 
     <div class="login">
-        <form action="api/session/login.php" method="POST">
+        <form action="/public/login" method="POST">
             <h1>Connexion</h1>
 
             <label><b>Nom d'utilisateur</b></label>
@@ -15,8 +15,12 @@
             <label><b>Mot de passe</b></label>
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
+            <?php
+            if ($error == false) { ?>
+                <a class="error"> Mauvais identifiant ou mot de pass ! </a>
+            <?php } ?>
             <input type="submit" id='submit' value='Login'>
-            <a href="forgot.html">Forgot password</a> 
+            <a href="forgot.html">Forgot password</a>
             <a href="register.html">Register now</a>
         </form>
     </div>

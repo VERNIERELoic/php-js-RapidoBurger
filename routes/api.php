@@ -5,8 +5,14 @@ $router->setNamespace('App\Controllers');
 $router->get('/', "PageController@viewHome");
 
 #Connection routes
-$router->get('/connexion', "PageController@viewConnexion");
+$router->get('/login', "PageController@viewLogin");
 
 #Register routes
 $router->get('/register', "PageController@viewRegister");
 $router->post('/register', "AuthController@register");
+
+#Login routes
+$router->post('/login', "AuthController@login");
+
+#logout routes
+$router->get('/logout', "AuthController@logout");
