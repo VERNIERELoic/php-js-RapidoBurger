@@ -7,20 +7,40 @@ use App\Models\User;
 use App\Repo\UserRepo;
 use App\Renderer;
 use App\Repo\AuthRepo;
+use App\Controllers;
 
 class AuthController extends Controller
 {
 
-    public function viewRegister(){
+    public function viewRegister()
+    {
         echo Renderer::render("register.php");
         return;
     }
-    public function register(){
+    public function register()
+    {
         $authrepo = new AuthRepo();
         $authrepo->register();
-
+        echo Renderer::render("home.php");
         return;
     }
 
-
+    public function login()
+    {
+        $authrepo = new AuthRepo();
+        $error = $authrepo->login();
+        if ($error == true) {
+            echo Renderer::render("home.php");
+        }else {
+            echo Renderer::render("login.php", compact('error'));
+        }
+        return;
+    }
+    public function logout()
+    {
+        $authrepo = new AuthRepo();
+        $authrepo->logout();
+        echo Renderer::render("home.php");
+        return;
+    }
 }
