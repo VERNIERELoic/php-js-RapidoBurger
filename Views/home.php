@@ -20,35 +20,6 @@
             vous accueillerons avec plaisir</br>
         </p>
     </article>
-
-    <div class="commande">
-        <h2 id="visiter">Visite</h2>
-        <p>Choisir une date de visite</p>
-        <form class="form" action="" method="post" enctype="multipart/form-data"></form>
-        <input type="date" name="retrait">
-        <h2 id="commander">Commander</h2>
-        <fieldset>
-            <legend>Ma commande : </legend>
-            <p>Votre Nom : </p>
-            <input type="text" name="nom" value="" />
-            <p>Votre prénom :</p>
-            <input type="text" name="prenom" Value="" />
-            <p>Votre adresse :</p>
-            <input type="text" name="adresse" Value="" />
-            <p>Choix du plat :</p>
-            <select name="nom" size="1">
-                <option>Burger</option>
-                <option>Salade</option>
-                <option>sandwitch</option>
-                <option>glace</option>
-                <option>cookie</option>
-            </select>
-            <p>Quantité:</p>
-            <input type="number" id="quantity" name="quantity" min="1" max="10">
-            <input type="submit" name="bouton" value="Envoyer">
-        </fieldset>
-        </form>
-    </div>
     <footer>
         <a>VERNIERE Loic - All right reserved 2021</a>
     </footer>

@@ -11,12 +11,16 @@ class PageController
         return;
     }
     public function viewLogin(){
-        $error = true;
-        echo Renderer::render("login.php", compact('error'));
+        echo Renderer::render("login.php");
         return;
     }
     public function viewRegister(){
         echo Renderer::render("register.php");
+        return;
+    }
+
+    public function viewOrder(){
+        echo Renderer::render("order.php");
         return;
     }
 }

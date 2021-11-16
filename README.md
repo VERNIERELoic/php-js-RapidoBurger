@@ -5,10 +5,9 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 ## Project plan 
 This project's based on MVC,   
 Some part of the porject work with an API
-## Classes 
+## Models 
 
-User class : 
-User
+### User
 
 ### User class
 

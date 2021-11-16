@@ -16,3 +16,6 @@ $router->post('/login', "AuthController@login");
 
 #logout routes
 $router->get('/logout', "AuthController@logout");
+
+#oders routes
+$router->get('/order', "PageController@viewOrder");
