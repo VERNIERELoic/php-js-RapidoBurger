@@ -46,7 +46,7 @@ p {
     /* background-image: url(../../src/banner.jpg); */
     background-size: cover;
     margin: -15px;
-    background-image: linear-gradient(to bottom, transparent 50%, rgb(21, 22, 26)), url("../images/banner.jpg");
+    background-image: linear-gradient(to bottom, transparent 50%, rgb(21, 22, 26)), url("../images/home/banner.jpg");
 }
 
 .decrouvir h2 {

@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-class Burger
+class Order
 {
-    private $bred;
-    private $veg;
-    private $sauce;
-    private $meet;
+    public $date;
+    public $userid;
+    
 
-    public function __construct($bdd)
+    public function __construct($date, $userid)
     {
+        $this->date = $date;
+        $this->userid = $userid;
     }
 }
-qqqq122
