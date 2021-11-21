@@ -17,4 +17,8 @@ $router->get('/logout', "AuthController@logout");
 
 #oders routes
 $router->get('/order', "PageController@viewOrder");
+$router->get('/order', "OrderController@viewHome");
 $router->post('/order', "OrderController@order");
+
+#forgot routes 
+$router->get('/forgot', "PageController@viewForgot");

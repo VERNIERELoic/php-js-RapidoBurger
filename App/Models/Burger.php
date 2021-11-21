@@ -4,11 +4,11 @@ namespace App\Models;
 
 class Burger
 {
-    private $pain;
-    private $legumes;
-    private $steakveg;
-    private $saucemaison;
-    private $orderid;
+    public $pain;
+    public $legumes;
+    public $steakveg;
+    public $saucemaison;
+    public $orderid;
     
 
     public function __construct($pain, $legumes, $steakveg, $saucemaison, $orderid)

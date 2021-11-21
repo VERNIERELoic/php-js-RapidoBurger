@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php include_once("header_prepared.php") ?>
+
 <body>
     <div class="loader-wrap">
         <div class="bottle-wrap">
@@ -94,7 +96,8 @@
             </div>
         </div>
         <div class="bar"></div>
-        <div class="text">Nous preparons votre commande</div>
+        <div class="text">En preparation ... </div>
+        <div class="text">Commande n°</div>
     </div>
 </body>
 

@@ -4,12 +4,11 @@ namespace App\Repo;
 
 use App\Models\Burger;
 
-class BurgerRepo extends BaseRepo       
+class BurgerRepo extends BaseRepo
 {
 
     public function __construct()
     {
-        parent::__construct();
     }
 
     public function setBurger($pain, $legumes, $steakveg, $saucemaison, $orderid)
@@ -18,13 +17,11 @@ class BurgerRepo extends BaseRepo
         return $burger;
     }
 
-    public function insertBurger($burger, $userid)
+    public function insertBurger($burger, $orderid)
     {
-        $order = new OrderRepo();
-        $orderid = $order->getCurrOrderId($userid);
         $sql = "INSERT INTO burger (pain, legumes, steakveg, saucemaison, orderid) VALUES (?,?,?,?,?)";
         $req = self::$bdd->prepare($sql);
-        $response = $req->execute(array($burger->pain, $burger->legumes, $burger->steakveg, $burger->saucemaison, $orderid));
-        return $response;
+        $req->execute(array($burger->pain, $burger->legumes, $burger->steakveg, $burger->saucemaison, $orderid));
+        return $orderid;
     }
 }

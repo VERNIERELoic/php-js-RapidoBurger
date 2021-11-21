@@ -9,10 +9,10 @@ class OrderRepo extends BaseRepo
 
     public function __construct()
     {
-        parent::__construct();
+
     }
 
-    public function setOrder($date, $userid)
+    public function setOrder($userid, $date)
     {
         $order = new Order($date, $userid);
         return $order;
@@ -20,7 +20,6 @@ class OrderRepo extends BaseRepo
 
     public function insertOrder($order)
     {
-        var_dump($order->date, $order->userid);
         $sql = "INSERT INTO orders (userid, date) VALUES (?,?)";
         $req = self::$bdd->prepare($sql);
         $response = $req->execute(array($order->date, $order->userid));
@@ -29,9 +28,9 @@ class OrderRepo extends BaseRepo
 
     public function getCurrOrderId($userid)
     {
-        $sql = 'SELECT orderid from orders where userid =' + $userid;
-        $response = self::$bdd->query($sql);
-        $data = $response->fetchAll();
-        return $data;
+        $sql = "SELECT orderid from orders where userid = :userid";
+        $req = self::$bdd->prepare($sql);
+        $response = $req->fetchAll();
+        return $response;
     }
 }

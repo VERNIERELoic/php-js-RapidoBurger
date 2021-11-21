@@ -9,6 +9,7 @@ class AuthRepo extends BaseRepo
 
     public function __construct()
     {
+        parent::__construct();
     }
     // Insert user in BDD
     public function register()

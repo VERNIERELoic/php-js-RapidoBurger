@@ -2,6 +2,9 @@
 
 namespace App\Repo;
 
+use App\Repo\OrderRepo;
+use App\Repo\BurgerRepo;
+
 
 class TicketRepo extends BaseRepo
 {
@@ -15,7 +18,7 @@ class TicketRepo extends BaseRepo
     {
         session_start();
         $userid = $_SESSION['id'];
-        $date = date("m.d.y"); 
+        $date = date("m.d.y");
 
 
         $burgerrepo = new BurgerRepo();
@@ -23,16 +26,16 @@ class TicketRepo extends BaseRepo
 
         $order = $orderrepo->setOrder($date, $userid);
         $orderrepo->insertOrder($order);
+        $orderid = $orderrepo->getCurrOrderId($userid);
 
         $burger = $burgerrepo->setBurger(
             $_POST['pain'],
             $_POST['legumes'],
             $_POST['steakveg'],
             $_POST['saucemaison'],
-            $userid
+            $orderid
         );
-
-        $burgerrepo->insertBurger($burger, $userid); #make sql request to insert burger in bdd
+        $burgerrepo->insertBurger($burger, $orderid); #make sql request to insert burger in bdd
 
         return $order;
     }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include("header_base.php") ?>
+<?php include("header_order.php") ?>
 
 <body>
     <h3 class="hello">IL EST TEMPS DE CREER TON BURGER <?php echo $_SESSION["username"] ?> ! </h3>

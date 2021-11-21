@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Renderer;
 
-class PageController
+class PageController extends Controller
 {
     public function viewHome()
     {
@@ -20,8 +20,12 @@ class PageController
     }
     public function viewRegister()
     {
-        session_start();
         echo Renderer::render("register.php");
+        return;
+    }
+    public function viewForgot()
+    {
+        echo Renderer::render("forgot.php");
         return;
     }
 

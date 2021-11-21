@@ -20,8 +20,8 @@
                 <a class="error"> Mauvais identifiant ou mot de pass ! </a>
             <?php } ?>
             <input type="submit" id='submit' value='Login'>
-            <a href="forgot.html">Forgot password</a>
-            <a href="register.html">Register now</a>
+            <a href="/public/forgot">Mots de passe oublié ?</a>
+            <a href="/public/register">S'inscrire</a>
         </form>
     </div>
     <footer>

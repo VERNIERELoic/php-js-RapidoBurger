@@ -13,7 +13,7 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE burger (
-    burgerid int NOT NULL,
+    burgerid int NOT NULL AUTO_INCREMENT,
     pain VARCHAR(30),
     legumes int,
     steakveg int,
