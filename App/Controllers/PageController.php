@@ -31,8 +31,8 @@ class PageController extends Controller
 
     public function viewOrder()
     {
+        if($_SESSION['username']){echo Renderer::render("order.php");}
         
-        echo Renderer::render("order.php");
         return;
     }
 

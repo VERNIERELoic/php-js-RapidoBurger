@@ -16,7 +16,7 @@
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <?php
-            if ($error == false) { ?>
+            if ($error == true) { ?>
                 <a class="error"> Mauvais identifiant ou mot de pass ! </a>
             <?php } ?>
             <input type="submit" id='submit' value='Login'>

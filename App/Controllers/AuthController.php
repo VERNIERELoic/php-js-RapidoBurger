@@ -2,12 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Controllers\UserController;
-use App\Models\User;
-use App\Repo\UserRepo;
 use App\Renderer;
 use App\Repo\AuthRepo;
-use App\Controllers;
 use App\Repo\ResetRepo;
 
 class AuthController extends Controller
@@ -31,9 +27,9 @@ class AuthController extends Controller
         $authrepo = new AuthRepo();
         $error = $authrepo->login();
         if ($error) {
-            echo Renderer::render("home.php");
-        } else {
             echo Renderer::render("login.php", compact('error'));
+        } else {
+            echo Renderer::render("home.php");
         }
         return;
     }

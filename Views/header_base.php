@@ -19,8 +19,15 @@
                 <li><a href="/public/order">Commander</a></li>
                 <div class="nav-log">
                     <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
-                    <li class="nav-login"><a class="log" href="/public/myaccount"><?php echo $_SESSION['username'] ?></a></li>
-                    <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+                    <li class="nav-login"><a class="log" href="/public/myaccount"><?php echo $_SESSION['username'] ?></a>
+                        <div class="sub-nav">
+                            <ul>
+                                <li><a>Paramètres</a></li>
+                                <li><a>Mes commandes</a></li>
+                            </ul>
+                    </li>
+                </div>
+                <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
                 </div>
             </ul>
         </nav>

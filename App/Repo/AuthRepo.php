@@ -40,9 +40,9 @@ class AuthRepo extends BaseRepo
             session_start();
             $_SESSION['id'] = $res['id'];
             $_SESSION['username'] = $username;
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
     }
 
