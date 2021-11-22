@@ -4,12 +4,19 @@ namespace App\Models;
 
 class Burger
 {
-    private $bred;
-    private $veg;
-    private $sauce;
-    private $meet;
+    public $pain;
+    public $legumes;
+    public $steakveg;
+    public $saucemaison;
+    public $orderid;
+    
 
-    public function __construct($bdd)
+    public function __construct($pain, $legumes, $steakveg, $saucemaison, $orderid)
     {
+        $this->pain = $pain;
+        $this->legumes = $legumes;
+        $this->steakveg = $steakveg;
+        $this->saucemaison = $saucemaison;
+        $this->orderid = $orderid;
     }
 }

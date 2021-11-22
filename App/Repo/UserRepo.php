@@ -9,7 +9,6 @@ class UserRepo extends BaseRepo
 
     public function __construct()
     {
-        parent::__construct();
     }
 
     public function setUser($username, $password, $email)
@@ -21,14 +20,14 @@ class UserRepo extends BaseRepo
     public function getUsers() # Get all user
     {
 
-        $response =  $this->bdd->query('SELECT * FROM users');
+        $response =  self::$bdd->query('SELECT * FROM users');
         $data = $response->fetchAll();
         return $data;
     }
 
     public function getUser($id) #Get specific user from his ID
     {
-        $response =  $this->bdd->query('SELECT * FROM users WHERE id =' + $id);
+        $response =  self::$bdd->query('SELECT * FROM users WHERE id = :id');
         $data = $response->fetchAll();
         return $data;
     }
@@ -54,8 +53,8 @@ class UserRepo extends BaseRepo
 
     public function dropUser($user) #Delete user form bdd
     {
-        $sql = "DELETE FROM users WHERE id=$user->id";
-        $this->bdd->exec($sql);
+        $sql = "DELETE FROM users WHERE id = :$user->id";
+        $req = self::$bdd->exec($sql);
     }
 
     public function update($user) #Change user info like password
@@ -66,6 +65,14 @@ class UserRepo extends BaseRepo
                         email = $user->email, 
                         password = $user->password,
                     WHERE id = $this->id";
-        $this->bdd->exec($sql);
+        self::$bdd->exec($sql);
+    }
+
+    public function updatePassword($password, $userid)
+    {
+        var_dump($password, $userid);
+        $sql = "UPDATE users SET password = ? WHERE id = ?";
+        $req = self::$bdd->prepare($sql);
+        $response = $req->execute(array($password, $userid));
     }
 }

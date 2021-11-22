@@ -7,7 +7,7 @@
     white-space: nowrap;
     transform: rotate(-10deg);
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: -5%;
     right: -5%;
     z-index: 100;
@@ -42,11 +42,11 @@ p {
 
 .banner-container {
     width: calc(100%+5px);
-    height: 700px;
+    height: 600px;
     /* background-image: url(../../src/banner.jpg); */
     background-size: cover;
     margin: -15px;
-    background-image: linear-gradient(to bottom, transparent 50%, rgb(21, 22, 26)), url("../images/banner.jpg");
+    background-image: linear-gradient(to bottom, transparent 50%, rgb(21, 22, 26)), url("../images/home/banner.jpg");
 }
 
 .decrouvir h2 {
@@ -60,67 +60,3 @@ p {
     margin-top: 60px;
 }
 
-.commande {
-    text-align: center;
-    margin-top: 60px;
-}
-
-.commande h2 {
-    font-weight: bolder;
-    margin-top: 60px;
-}
-
-legend {
-    border-width: 3px;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-fieldset {
-    width: 50%;
-    margin: auto;
-    display: block;
-    border-radius: 5px;
-    background-color: rgb(21, 22, 26);
-    padding: 20px;
-}
-
-fieldset p {
-    text-align: center;
-}
-
-fieldset input {
-    margin: auto;
-    display: block;
-    width: 40%;
-}
-
-form {
-    width: 100%;
-}
-
-input {
-    padding: 8px;
-}
-
-input:focus {
-    border: 1px solid #0026ff;
-}
-
-input[type=submit] {
-    background-color: rgb(21, 22, 26);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: auto;
-    margin-top: 24px;
-    border: 2px solid white;
-    width: 20%;
-}
-
-input[type=submit]:hover {
-    background-color: gray;
-    width: 20%;
-}

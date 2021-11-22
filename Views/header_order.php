@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/home.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../public/ressources/css/order.css" media="screen" />
 </head>
 <?php if (isset($_SESSION['username'])) { ?>
 
@@ -39,5 +40,4 @@
         </nav>
     </head>
 <?php } ?>
-
 </html>

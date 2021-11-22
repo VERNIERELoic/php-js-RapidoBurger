@@ -8,6 +8,7 @@ use App\Repo\UserRepo;
 use App\Renderer;
 use App\Repo\AuthRepo;
 use App\Controllers;
+use App\Repo\ResetRepo;
 
 class AuthController extends Controller
 {
@@ -29,9 +30,9 @@ class AuthController extends Controller
     {
         $authrepo = new AuthRepo();
         $error = $authrepo->login();
-        if ($error == true) {
+        if ($error) {
             echo Renderer::render("home.php");
-        }else {
+        } else {
             echo Renderer::render("login.php", compact('error'));
         }
         return;
@@ -41,6 +42,13 @@ class AuthController extends Controller
         $authrepo = new AuthRepo();
         $authrepo->logout();
         echo Renderer::render("home.php");
+        return;
+    }
+
+    public function resetpsswd()
+    {
+        $resetrepo = new ResetRepo();
+        $resetrepo->sendMail();
         return;
     }
 }
