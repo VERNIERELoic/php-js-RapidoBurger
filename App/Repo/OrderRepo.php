@@ -22,15 +22,16 @@ class OrderRepo extends BaseRepo
     {
         $sql = "INSERT INTO orders (userid, date) VALUES (?,?)";
         $req = self::$bdd->prepare($sql);
-        $response = $req->execute(array($order->date, $order->userid));
+        $response = $req->execute(array(intval($order->userid),$order->date));
         return $response;
     }
 
     public function getCurrOrderId($userid)
     {
-        $sql = "SELECT orderid from orders where userid = :userid";
+        $sql = "SELECT orderid from orders where userid = ? order by orderid desc";
         $req = self::$bdd->prepare($sql);
-        $response = $req->fetchAll();
-        return $response;
+        $req->execute(array($userid));
+        $response = $req->fetch();
+        return $response['orderid'];
     }
 }

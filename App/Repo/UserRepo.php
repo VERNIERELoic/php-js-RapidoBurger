@@ -53,8 +53,8 @@ class UserRepo extends BaseRepo
 
     public function dropUser($user) #Delete user form bdd
     {
-        $sql = "DELETE FROM users WHERE id=$user->id";
-        self::$bdd->exec($sql);
+        $sql = "DELETE FROM users WHERE id = :$user->id";
+        $req = self::$bdd->exec($sql);
     }
 
     public function update($user) #Change user info like password
@@ -66,5 +66,13 @@ class UserRepo extends BaseRepo
                         password = $user->password,
                     WHERE id = $this->id";
         self::$bdd->exec($sql);
+    }
+
+    public function updatePassword($password, $userid)
+    {
+        var_dump($password, $userid);
+        $sql = "UPDATE users SET password = ? WHERE id = ?";
+        $req = self::$bdd->prepare($sql);
+        $response = $req->execute(array($password, $userid));
     }
 }

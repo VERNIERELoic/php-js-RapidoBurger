@@ -6,7 +6,7 @@
 <body>
 
     <div class="login">
-        <form action="/public/forgot" method="POST">
+        <form action="/public/resetpsswd" method="POST">
             <h1>Mots de passe oublié</h1>
 
             <label><b>Email</b></label>

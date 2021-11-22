@@ -8,14 +8,14 @@ class PageController extends Controller
 {
     public function viewHome()
     {
-        session_start();
+        
         echo Renderer::render("home.php");
         return;
     }
     public function viewLogin()
     {
-        session_start();
-        echo Renderer::render("login.php");
+       
+        echo Renderer::render("login.php", ['error' => false]);
         return;
     }
     public function viewRegister()
@@ -31,8 +31,14 @@ class PageController extends Controller
 
     public function viewOrder()
     {
-        session_start();
+        
         echo Renderer::render("order.php");
+        return;
+    }
+
+    public function viewResetpsswd()
+    {
+        echo Renderer::render("resetpsswd.php");
         return;
     }
 }

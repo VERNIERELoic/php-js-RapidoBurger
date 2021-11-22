@@ -23,5 +23,6 @@ class Databaseconnection
         die('Erreur : ' . $e->getMessage());
       }
     }
+    return self::$bdd;
   }
 }

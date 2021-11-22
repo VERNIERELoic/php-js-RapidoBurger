@@ -16,23 +16,21 @@ class TicketRepo extends BaseRepo
 
     public function registeBurger()
     {
-        session_start();
         $userid = $_SESSION['id'];
-        $date = date("m.d.y");
+        $date = date("Y-m-d");
 
 
         $burgerrepo = new BurgerRepo();
         $orderrepo = new OrderRepo();
 
-        $order = $orderrepo->setOrder($date, $userid);
+        $order = $orderrepo->setOrder($userid, $date);
         $orderrepo->insertOrder($order);
         $orderid = $orderrepo->getCurrOrderId($userid);
-
         $burger = $burgerrepo->setBurger(
-            $_POST['pain'],
-            $_POST['legumes'],
-            $_POST['steakveg'],
-            $_POST['saucemaison'],
+            intval($_POST['pain'] ?? 0),
+            intval($_POST['legumes'] ?? 0),
+            intval($_POST['steakveg'] ?? 0),
+            intval($_POST['saucemaison'] ?? 0),
             $orderid
         );
         $burgerrepo->insertBurger($burger, $orderid); #make sql request to insert burger in bdd

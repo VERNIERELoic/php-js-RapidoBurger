@@ -8,12 +8,13 @@ abstract class BaseRepo
 {
 
     # This class is used for share bdd access to other repo class
-    protected static $bdd;
+    protected static $bdd = NULL;
 
     public function __construct()
     {
         $connection = new Databaseconnection();
         self::$bdd = $connection->getConnection();
-        return self::$bdd;
     }
+
+
 }

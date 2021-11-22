@@ -39,7 +39,6 @@ body {
     background: #212121;
     justify-content: center;
     align-items: center;
-    font: 24px/1.4 "RobotoDraft", sans-serif;
     color: #fff;
 }
 
@@ -49,6 +48,7 @@ section {
     padding: 0.5em;
     width: 40%;
     margin-top: 5%;
+    font: 24px/1.4 "RobotoDraft", sans-serif;
 }
 
 h1 {
