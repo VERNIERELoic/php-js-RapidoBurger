@@ -19,11 +19,11 @@
                 <li><a href="/public/order">Commander</a></li>
                 <div class="nav-log">
                     <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
-                    <li class="nav-login"><a class="log" href="/public/myaccount"><?php echo $_SESSION['username'] ?></a>
-                        <div class="sub-nav">
+                    <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
+                        <div class=" sub-nav">
                             <ul>
-                                <li><a>Paramètres</a></li>
-                                <li><a>Mes commandes</a></li>
+                                <li href="/public/myaccount"><a>Paramètres</a></li>
+                                <li href="public/myorders"><a>Mes commandes</a></li>
                             </ul>
                     </li>
                 </div>
