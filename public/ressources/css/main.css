@@ -13,32 +13,52 @@ html {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: rgb(21, 22, 26);
     position: fixed;
     top: 0;
     width: 100%;
     left: 0;
     display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    max-height: 50px;
 }
 
 .nav-log {
     justify-content: flex-end;
-    /* float: right; */
     margin-left: auto;
-}
-
-.nav-logi {
-    height: 40px;
-    transform: translateY(-50%);
 }
 
 .nav-log img {
     height: 30px;
     margin-top: 40%;
+}
+
+
+.dropdown {
+    position: absolute;
+    padding: 0;
+    margin-left: auto;
+    list-style: none;
+    height: 1px;
+    width: auto;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.nav-login:hover .dropdown {
+    width: auto;
+    height: auto;
+    display: block;
+    background: #313131;
+    clip: auto;
+    opacity: 1;
+    z-index: 100;
+}
+
+
+ul li ul li {
+    clear: both;
+    width: 100%;
 }
 
 
@@ -63,7 +83,7 @@ li a:hover:not(.active) {
     margin: 0;
 }
 
-.active {
+ li .active {
     background-color: salmon;
 }
 

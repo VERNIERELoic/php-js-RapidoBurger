@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include("header_auth.php") ?>
+<?php include("header_login.php") ?>
 
-<div class="register">
-    <form action="/public/register" method="POST">
-        <h1>Formulaire d'inscription</h1>
+<div class="modify">
+    <form action="/public/modify" method="POST">
+        <h1>MOdifier mon profile</h1>
 
         <label><b>Nom d'utilisateur</b></label>
         <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
