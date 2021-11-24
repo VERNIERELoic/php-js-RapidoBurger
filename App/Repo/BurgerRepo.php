@@ -22,7 +22,6 @@ class BurgerRepo extends BaseRepo
         $sql = "INSERT INTO burger (pain, legumes, steakveg, saucemaison, orderid) VALUES (?,?,?,?,?)";
         $req = self::$bdd->prepare($sql);
         $req->execute(array($burger->pain, $burger->legumes, $burger->steakveg, $burger->saucemaison, intval($orderid)));
-        var_dump($sql,array($burger->pain, $burger->legumes, $burger->steakveg, $burger->saucemaison, intval($orderid)) );
         return $orderid;
     }
 }

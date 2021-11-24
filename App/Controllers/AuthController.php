@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Renderer;
 use App\Repo\AuthRepo;
 use App\Repo\ResetRepo;
+use App\Service\AuthService;
 
 class AuthController extends Controller
 {
@@ -16,7 +17,7 @@ class AuthController extends Controller
     }
     public function register()
     {
-        $authrepo = new AuthRepo();
+        $authrepo = new AuthService();
         $authrepo->register();
         echo Renderer::render("home.php");
         return;
@@ -24,7 +25,7 @@ class AuthController extends Controller
 
     public function login()
     {
-        $authrepo = new AuthRepo();
+        $authrepo = new AuthService();
         $error = $authrepo->login();
         if ($error) {
             echo Renderer::render("login.php", compact('error'));
@@ -35,7 +36,7 @@ class AuthController extends Controller
     }
     public function logout()
     {
-        $authrepo = new AuthRepo();
+        $authrepo = new AuthService();
         $authrepo->logout();
         echo Renderer::render("home.php");
         return;

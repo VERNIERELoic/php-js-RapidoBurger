@@ -7,6 +7,8 @@
     <form action="/public/modify" method="POST">
         <h1>MOdifier mon profile</h1>
 
+        
+
         <label><b>Nom d'utilisateur</b></label>
         <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
 

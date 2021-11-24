@@ -2,7 +2,6 @@
 
 namespace App\Repo;
 
-use App\Models\User;
 use App\Dependencies\PHPMailer\PHPMailer;
 
 class ResetRepo extends BaseRepo
