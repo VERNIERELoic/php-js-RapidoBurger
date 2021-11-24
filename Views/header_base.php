@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/home.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/main.css" media="screen" />
+
 </head>
+
 <?php if (isset($_SESSION['username'])) { ?>
 
     <head>
@@ -19,8 +21,16 @@
                 <li><a href="/public/order">Commander</a></li>
                 <div class="nav-log">
                     <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
-                    <li class="nav-login"><a class="log" href="/public/myaccount"><?php echo $_SESSION['username'] ?></a></li>
-                    <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+                    <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
+                        <ul class="dropdown">
+                            <li><a href="/public/myorders">Commandes</a></li>
+                            <li><a href="/public/modify">Modifier profile</a></li>
+                        </ul>
+                    </li>
+                </div>
+                </li>
+                </div>
+                <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
                 </div>
             </ul>
         </nav>

@@ -26,3 +26,6 @@ $router->post('/order', "OrderController@order");
 #forgot routes 
 $router->get('/forgot', "PageController@viewForgot");
 $router->post('/resetpsswd', "AuthController@resetpsswd");
+
+#modify routes
+$router->get('/modify', "PageController@viewModify");

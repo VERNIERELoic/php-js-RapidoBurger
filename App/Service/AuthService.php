@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repo;
+namespace App\Service;
 
 use App\Repo\UserRepo;
 
-class AuthRepo extends BaseRepo
+class AuthService extends Service
 {
 
     public function __construct()
@@ -16,7 +16,6 @@ class AuthRepo extends BaseRepo
     {
 
         if (isset($_POST['username'])) { #test if username field enmpty
-            var_dump("isset true");
             $userrepo = new UserRepo();
             $user = $userrepo->setUser(  # Set attributes of user classs
                 $_POST['username'],
@@ -40,9 +39,9 @@ class AuthRepo extends BaseRepo
             session_start();
             $_SESSION['id'] = $res['id'];
             $_SESSION['username'] = $username;
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
     }
 

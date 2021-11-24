@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repo;
+namespace App\Service;
 
 use App\Repo\OrderRepo;
 use App\Repo\BurgerRepo;
 
 
-class TicketRepo extends BaseRepo
+class TicketService extends Service
 {
 
     public function __construct()
@@ -23,9 +23,11 @@ class TicketRepo extends BaseRepo
         $burgerrepo = new BurgerRepo();
         $orderrepo = new OrderRepo();
 
+        
         $order = $orderrepo->setOrder($userid, $date);
         $orderrepo->insertOrder($order);
         $orderid = $orderrepo->getCurrOrderId($userid);
+        $order->orderid = $orderid;
         $burger = $burgerrepo->setBurger(
             intval($_POST['pain'] ?? 0),
             intval($_POST['legumes'] ?? 0),
@@ -35,6 +37,6 @@ class TicketRepo extends BaseRepo
         );
         $burgerrepo->insertBurger($burger, $orderid); #make sql request to insert burger in bdd
 
-        return $order;
+        return $orderid;
     }
 }

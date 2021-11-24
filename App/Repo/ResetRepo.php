@@ -2,18 +2,32 @@
 
 namespace App\Repo;
 
-use App\Models\User;
 use App\Dependencies\PHPMailer\PHPMailer;
 
 class ResetRepo extends BaseRepo
 {
 
+  function generate_password($length = 20)
+  {
+    $chars =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' .
+      '0123456789`-=~!@#$%^&*()_+,./<>?;:[]{}\|';
+
+    $str = '';
+    $max = strlen($chars) - 1;
+
+    for ($i = 0; $i < $length; $i++)
+      $str .= $chars[random_int(0, $max)];
+
+    return $str;
+  }
+
   public function genPassword()
   {
-    $password = rand(999, 99999);
+    $resetrepo = new ResetRepo();
+    $password = $resetrepo->generate_password();
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    return [$password,$hashed_password];
+    return [$password, $hashed_password];
   }
 
   public function resetPsswd($userid)
@@ -33,7 +47,7 @@ class ResetRepo extends BaseRepo
       $sql = "SELECT id , email FROM users WHERE email = ?";
       $res = self::$bdd->prepare($sql);
       //$res->setFetchMode(\PDO::FETCH_CLASS, User::class);
-     
+
 
 
       if ($res->execute(array($email))) {
@@ -58,8 +72,8 @@ class ResetRepo extends BaseRepo
           $mail->addAddress($email);
 
           $mail->isHTML(true);
-          $mail->Subject = 'Récuperation mot de passe';
-          $mail->Body    = '<b>Nouveau mot de passe : </b>' .$password;
+          $mail->Subject = 'Recuperation mot de passe Rapido project';
+          $mail->Body    = '<b>Nouveau mot de passe : </b>' . $password;
           $mail->AltBody = 'Nouveau mot de passe :' . $password;
           $mail->send();
           echo "Mail has been sent successfully!";

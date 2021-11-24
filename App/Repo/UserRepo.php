@@ -9,6 +9,7 @@ class UserRepo extends BaseRepo
 
     public function __construct()
     {
+        parent::__construct();
     }
 
     public function setUser($username, $password, $email)
@@ -34,11 +35,9 @@ class UserRepo extends BaseRepo
 
     public function getUserInfo($username) #Get specific userID from username 
     {
-        $sql = "SELECT id, password FROM users WHERE username = :username";
+        $sql = "SELECT id, password FROM users WHERE username = ?";
         $request = self::$bdd->prepare($sql);
-        $request->execute(array(
-            'username' => $username
-        ));
+        $request->execute(array($username));
         $res = $request->fetch();
         return $res;
     }
@@ -70,7 +69,6 @@ class UserRepo extends BaseRepo
 
     public function updatePassword($password, $userid)
     {
-        var_dump($password, $userid);
         $sql = "UPDATE users SET password = ? WHERE id = ?";
         $req = self::$bdd->prepare($sql);
         $response = $req->execute(array($password, $userid));

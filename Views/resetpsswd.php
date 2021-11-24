@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include("header_login.php"); ?>
+<?php include("header_auth.php"); ?>
 
 <body>
 

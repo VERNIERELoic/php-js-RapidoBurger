@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include_once("header_prepared.php") ?>
+<?php
+
+include_once("header_prepared.php") ?>
 
 <body>
     <div class="loader-wrap">
@@ -97,7 +99,7 @@
         </div>
         <div class="bar"></div>
         <div class="text">En preparation ... </div>
-        <div class="text">Commande n°</div>
+        <div class="text">Commande n° <?php echo $orderid ?></div>
     </div>
 </body>
 
