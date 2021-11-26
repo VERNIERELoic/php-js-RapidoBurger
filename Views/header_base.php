@@ -9,10 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/home.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../public/ressources/css/admintab.css" media="screen" />
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
 
 </head>
 
-<?php if (isset($_SESSION['username'])) { ?>
+<?php
+
+use App\Repo\UserRepo;
+
+$userrepo = new UserRepo();
+
+$isadmin = $userrepo->isAdmin($_SESSION['username']);
+$isconnected = $_SESSION['username'];
+
+var_dump($isadmin);
+if (isset($isconnected) && $isadmin == 0) { ?>
+    <script>
+        function setConnection() {
+            const socket = io('127.0.0.1:3000');
+            socket.emit('login', "<?php print($_SESSION['username']); ?>")
+            console.log('connected', socket)
+        }
+        setConnection();
+
+        console.log("<?php $php_var ?>");
+    </script>
 
     <head>
         <nav>
@@ -22,16 +44,46 @@
                 <div class="nav-log">
                     <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
                     <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
-                        <ul class="dropdown">
-                            <li><a href="/public/myorders">Commandes</a></li>
-                            <li><a href="/public/modify">Modifier profile</a></li>
-                        </ul>
-                    </li>
-                </div>
-                </li>
-                </div>
-                <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
-                </div>
+                        <ul class=" dropdown">
+                    <li><a href="/public/myorders">Commandes</a></li>
+                    <li><a href="/public/modify">Modifier profile</a></li>
+            </ul>
+            </li>
+            </div>
+            </li>
+            </div>
+            <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+            </div>
+            </ul>
+        </nav>
+    </head>
+<?php $userrepo = new UserRepo();
+    $isadmin = $userrepo->isAdmin($_SESSION['username']);
+} elseif ($isconnected && $isadmin == 1) { ?>
+
+    <script>
+        setConnection();
+    </script>
+
+    <head>
+        <nav>
+            <ul class="navbar">
+                <li><a href="/public">Accueil</a></li>
+                <li><a href="/public/order">Commander</a></li>
+                <li><a href="/public/orderlist ">Interface admin</a></li>
+                <div class="nav-log">
+                    <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
+                    <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
+                    <ul class=" dropdown">
+                    <li><a href="/public/myorders">Commandes</a></li>
+                    <li><a href="/public/modify">Modifier profile</a></li>
+            </ul>
+            </li>
+            </div>
+            </li>
+            </div>
+            <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+            </div>
             </ul>
         </nav>
     </head>

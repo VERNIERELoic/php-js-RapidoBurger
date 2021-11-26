@@ -73,4 +73,13 @@ class UserRepo extends BaseRepo
         $req = self::$bdd->prepare($sql);
         $response = $req->execute(array($password, $userid));
     }
+
+    public function isAdmin($username)
+    {
+        $sql = "SELECT isadmin FROM users WHERE username = ?";
+        $request = self::$bdd->prepare($sql);
+        $request->execute(array($username));
+        $isadmin = $request->fetch();
+        return intval($isadmin);;
+    }
 }

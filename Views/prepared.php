@@ -3,7 +3,9 @@
 
 <?php
 
-include_once("header_prepared.php") ?>
+include_once("header_prepared.php");
+include_once("header_base.php");
+ ?>
 
 <body>
     <div class="loader-wrap">
@@ -102,5 +104,12 @@ include_once("header_prepared.php") ?>
         <div class="text">Commande n° <?php echo $orderid ?></div>
     </div>
 </body>
+
+<script>
+    function sendOrder(order) {
+        socket.emit('order.push', order);
+    }
+    sendOrder('dffddf')
+</script>
 
 </html>

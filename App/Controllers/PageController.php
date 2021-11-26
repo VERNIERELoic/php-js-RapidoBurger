@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\Order;
 use App\Renderer;
+use App\Repo\OrderRepo;
 
 class PageController extends Controller
 {
@@ -34,7 +36,6 @@ class PageController extends Controller
         if ($_SESSION['username']) {
             echo Renderer::render("order.php");
         }
-
         return;
     }
 
@@ -47,6 +48,14 @@ class PageController extends Controller
     public function viewModify()
     {
         echo Renderer::render("modify.php");
+        return;
+    }
+
+    public function viewOrderlist()
+    {
+        $orderrepo = new OrderRepo();
+        $orderinfo = $orderrepo->getOders();
+        echo Renderer::render("orderlist.php", compact('orderinfo'));
         return;
     }
 }
