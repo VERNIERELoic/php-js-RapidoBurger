@@ -11,89 +11,89 @@
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/main.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/admintab.css" media="screen" />
     <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href=cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" media="screen" />
-    <script src="cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
-<?php
+    <?php
 
-use App\Repo\UserRepo;
+    use App\Repo\UserRepo;
 
-$userrepo = new UserRepo();
+    $userrepo = new UserRepo();
 
-$isadmin = $userrepo->isAdmin($_SESSION['username']);
-$isconnected = $_SESSION['username'];
-
-if (isset($isconnected) && $isadmin == 0) { ?>
-    <script>
-        const socket = io('127.0.0.1:3000');
-        socket.emit('login', "<?php print($_SESSION['username']); ?>");
-        console.log('connected', socket);
-    </script>
-
-    <head>
-        <nav>
-            <ul class="navbar">
-                <li><a href="/public">Accueil</a></li>
-                <li><a href="/public/order">Commander</a></li>
-                <div class="nav-log">
-                    <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
-                    <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
-                        <ul class=" dropdown">
-                    <li><a href="/public/myorders">Commandes</a></li>
-                    <li><a href="/public/modify">Modifier profile</a></li>
-            </ul>
-            </li>
-            </div>
-            </li>
-            </div>
-            <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
-            </div>
-            </ul>
-        </nav>
-    </head>
-<?php $userrepo = new UserRepo();
     $isadmin = $userrepo->isAdmin($_SESSION['username']);
-} elseif ($isconnected && $isadmin == 1) { ?>
+    $isconnected = $_SESSION['username'];
 
-    <script>
-        setConnection();
-    </script>
+    if (isset($isconnected) && $isadmin == 0) { ?>
+        <script>
+            const socket = io('127.0.0.1:3000');
+            socket.emit('login', "<?php print($_SESSION['username']); ?>");
+            console.log('connected', socket);
+        </script>
 
-    <head>
-        <nav>
-            <ul class="navbar">
-                <li><a href="/public">Accueil</a></li>
-                <li><a href="/public/order">Commander</a></li>
-                <li><a href="/public/orderlist ">Interface admin</a></li>
-                <div class="nav-log">
-                    <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
-                    <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
-                    <ul class=" dropdown">
-                    <li><a href="/public/myorders">Commandes</a></li>
-                    <li><a href="/public/modify">Modifier profile</a></li>
-            </ul>
-            </li>
-            </div>
-            </li>
-            </div>
-            <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
-            </div>
-            </ul>
-        </nav>
-    </head>
-<?php } else { ?>
-
-    <head>
-        <nav>
-            <ul class="navbar">
-                <li><a href="/public/">Accueil</a></li>
-                <div class="nav-log">
-                    <li class="nav-login"><a class="log" href="/public/login">Se connecter</a></li>
-                    <li class="nav-suscribe"><a class="log" href="/public/register">S'inscrire</a></li>
+        <head>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="/public">Accueil</a></li>
+                    <li><a href="/public/order">Commander</a></li>
+                    <div class="nav-log">
+                        <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
+                        <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
+                        <ul class=" dropdown">
+                        <li><a href="/public/myorders">Commandes</a></li>
+                        <li><a href="/public/modify">Modifier profile</a></li>
+                </ul>
+                </li>
                 </div>
-            </ul>
-        </nav>
-    </head>
-<?php } ?>
+                </li>
+                </div>
+                <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+                </div>
+                </ul>
+            </nav>
+        </head>
+    <?php $userrepo = new UserRepo();
+        $isadmin = $userrepo->isAdmin($_SESSION['username']);
+    } elseif ($isconnected && $isadmin == 1) { ?>
+
+        <script>
+            const socket = io('127.0.0.1:3000');
+            socket.emit('login', "<?php print($_SESSION['username']); ?>");
+            console.log('connected', socket);
+        </script>
+
+        <head>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="/public">Accueil</a></li>
+                    <li><a href="/public/order">Commander</a></li>
+                    <li><a href="/public/orderlist ">Interface admin</a></li>
+                    <div class="nav-log">
+                        <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
+                        <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
+                    <ul class=" dropdown">
+                        <li><a href="/public/myorders">Commandes</a></li>
+                        <li><a href="/public/modify">Modifier profile</a></li>
+                </ul>
+                </li>
+                </div>
+                </li>
+                </div>
+                <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+                </div>
+                </ul>
+            </nav>
+        </head>
+    <?php } else { ?>
+
+        <head>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="/public/">Accueil</a></li>
+                    <div class="nav-log">
+                        <li class="nav-login"><a class="log" href="/public/login">Se connecter</a></li>
+                        <li class="nav-suscribe"><a class="log" href="/public/register">S'inscrire</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </head>
+    <?php } ?>
 
 </html>

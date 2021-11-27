@@ -17,7 +17,7 @@ const io = require("socket.io")(http, {
     transports: ['polling']
 });
 
-console.log("Start server");
+console.log("STARTING SERVER ... OK");
 
 
 io.on("connection", socket => {
@@ -36,7 +36,7 @@ io.on("connection", socket => {
 const socketEvent = (socket) => {
 
     socket.on("order.push", (order) => {
-        console.log('pushing order');
+        console.log('PUSHING ORDER FROM PREPARED PAGE');
         socket.broadcast.emit('order.push', { order });
     });
 
@@ -44,9 +44,5 @@ const socketEvent = (socket) => {
         throw 'Connection Failed';
     });
 }
-
-/* app.get("/active_order", cors(corsOptions), (req, res) => {
-    res.send(getActiveUsers());
-}) */
 
 http.listen(process.env.PORT || 3000, "127.0.0.1");

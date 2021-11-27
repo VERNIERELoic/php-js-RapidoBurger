@@ -5,6 +5,7 @@
 
 include_once("header_prepared.php");
 include_once("header_base.php");
+
 ?>
 
 <body>
@@ -106,8 +107,7 @@ include_once("header_base.php");
 </body>
 
 <script>
-    socket.emit('order.push', order);
-    sendOrder('dffddf')
+    socket.emit('order.push', "Signal : New order");
 </script>
 
 </html>
