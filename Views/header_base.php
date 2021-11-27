@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/main.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../public/ressources/css/admintab.css" media="screen" />
     <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
-
-</head>
+    <link rel="stylesheet" type="text/css" href=cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" media="screen" />
+    <script src="cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
 <?php
 
@@ -23,17 +23,11 @@ $userrepo = new UserRepo();
 $isadmin = $userrepo->isAdmin($_SESSION['username']);
 $isconnected = $_SESSION['username'];
 
-var_dump($isadmin);
 if (isset($isconnected) && $isadmin == 0) { ?>
     <script>
-        function setConnection() {
-            const socket = io('127.0.0.1:3000');
-            socket.emit('login', "<?php print($_SESSION['username']); ?>")
-            console.log('connected', socket)
-        }
-        setConnection();
-
-        console.log("<?php $php_var ?>");
+        const socket = io('127.0.0.1:3000');
+        socket.emit('login', "<?php print($_SESSION['username']); ?>");
+        console.log('connected', socket);
     </script>
 
     <head>

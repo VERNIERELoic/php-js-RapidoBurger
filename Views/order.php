@@ -47,8 +47,4 @@ include('header_base.php');
         <a>VERNIERE Loic - All right reserved 2021</a>
     </footer>
 </body>
-
-
-
-
 </html>

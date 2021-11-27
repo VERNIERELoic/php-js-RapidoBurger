@@ -21,29 +21,42 @@ class OrderRepo extends BaseRepo
     public function getOders($status = 0)
     {
         $sql = "SELECT o.orderid, 
-                    o.date 
-                    u.username,
-                    b.pain,
-                    b.legumes,
-                    b.steakveg,
-                    b.saucemaison,
+                       o.date,u.username, 
+                       b.pain, b.legumes, 
+                       b.steakveg, 
+                       b.saucemaison
         from users as u
-        inner join orders as s on u.id = o.userid
+        inner join orders as o on u.id = o.userid
         inner join burger as b on o.orderid = b.orderid
-        where status = ? 
-        order by date(date) desc";
+        where status = 0
+        order by date(date) desc;";
 
         $req = self::$bdd->prepare($sql);
-        $req->execute(array($status));
-        $response = $req->fetchAll();
-        return $response;
+        $req->execute(array());
+
+        $combinedResults = array();
+        $i = 0;
+
+        while ($row = $req->fetch()) {
+            $combinedResults[$i++] = array(
+                'date' => $row['date'],
+                'orderid' => $row['orderid'],
+                'username' => $row['username'],
+                'pain' => $row['pain'],
+                'legumes' => $row['legumes'],
+                'steakveg' => $row['steakveg'],
+                'saucemaison' => $row['saucemaison']
+            );
+        }
+
+        return $combinedResults;
     }
 
-    public function insertOrder($order)
+    public function insertOrder($order, $status = 0)
     {
-        $sql = "INSERT INTO orders (userid, date) VALUES (?,?)";
+        $sql = "INSERT INTO orders (userid, date, status) VALUES (?,?,?)";
         $req = self::$bdd->prepare($sql);
-        $response = $req->execute(array(intval($order->userid), $order->date));
+        $response = $req->execute(array(intval($order->userid), $order->date, $status));
         return $response;
     }
 

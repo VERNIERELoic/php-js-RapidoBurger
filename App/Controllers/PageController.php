@@ -54,8 +54,8 @@ class PageController extends Controller
     public function viewOrderlist()
     {
         $orderrepo = new OrderRepo();
-        $orderinfo = $orderrepo->getOders();
-        echo Renderer::render("orderlist.php", compact('orderinfo'));
+        $combinedResults = $orderrepo->getOders();
+        echo Renderer::render("orderlist.php", compact('combinedResults'));
         return;
     }
 }

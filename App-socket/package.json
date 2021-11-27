@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "datatables.net": "^1.11.3",
+    "datatables.net-dt": "^1.11.3",
     "express": "^4.17.1",
     "socket.io": "^4.4.0"
   }

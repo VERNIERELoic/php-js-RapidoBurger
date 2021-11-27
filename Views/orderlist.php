@@ -12,17 +12,23 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td data-label="date">..</td>
-            <td data-label="orderid">..</td>
-            <td data-label="user">..</td>
-            <td data-label="orderproduct">..</td>
-            <td data-label="validate">
-                <div class="wrapper">
-                    <button type="submit" value="1" href="#"><span>Terminer</span></button>
-                </div>
-            </td>
-        </tr>
+        <?php $i = 0; ?>
+        <?php foreach ($combinedResults as $row) { ?>
+            <tr>
+                <td data-label="date"><?php echo $combinedResults[$i]["date"]; ?></td>
+                <td data-label="orderid"><?php echo $combinedResults[$i]["orderid"]; ?></td>
+                <td data-label="user"><?php echo $combinedResults[$i]["username"];  ?></td>
+                <td data-label="orderproduct"><?php echo "Pain = ",$combinedResults[$i]["pain"],
+                                                         " leg = ",$combinedResults[$i]["legumes"],
+                                                        " steak = ",$combinedResults[$i]["steakveg"],
+                                                        " sauce = ",$combinedResults[$i]["saucemaison"]    ?></td>
+                <td data-label="validate">
+                    <div class="wrapper">
+                        <button type="submit" value="1" href="#"><span>Terminer</span></button>
+                    </div>
+                </td>
+            </tr>
+        <?php $i++; } ?>
     </tbody>
 </table>
 
