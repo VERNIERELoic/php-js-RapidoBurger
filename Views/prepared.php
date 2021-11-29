@@ -101,13 +101,18 @@ include_once("header_base.php");
             </div>
         </div>
         <div class="bar"></div>
-        <div class="text">En preparation ... </div>
+        <div id="status" class="text">En preparation ... </div>
         <div class="text">Commande n° <?php echo $orderid ?></div>
     </div>
 </body>
 
 <script>
     socket.emit('order.push', "Signal : New order");
+
+    socket.on('response.push', (data) => {
+        console.log("RESPONSE ON => ", data);
+        document.getElementById('status').innerHTML = "Votre commande est prête";
+    });
 </script>
 
 </html>

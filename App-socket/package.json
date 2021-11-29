@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "dependencies": {
-    "datatables.net": "^1.11.3",
-    "datatables.net-dt": "^1.11.3",
-    "express": "^4.17.1",
-    "socket.io": "^4.4.0"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.4.0"
+  }
 }

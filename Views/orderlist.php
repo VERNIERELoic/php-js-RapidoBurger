@@ -24,7 +24,7 @@
                                                 " sauce = ", $combinedResults[$i]["saucemaison"]    ?></td>
                 <td data-label="validate">
                     <div class="wrapper">
-                        <button type="submit" value="1" href="#"><span>Terminer</span></button>
+                        <button id="finish" type="submit" value="1" href="#"><span>Terminer</span></button>
                     </div>
                 </td>
             </tr>
@@ -38,12 +38,23 @@
 </footer>
 
 <script>
-    function RefreshTable() {
-        $("#orderlist").load("orderlist.php #orderlist");
+    function refreshTable() {
+        document.getElementById('orderlist').load("orderlist.php #orderlist");
     }
+
+    function sendResponse(){
+        socket.emit('response.push', "Signal : Order finish");
+    }
+
+    function buttonListerner() {
+        var finishButton = document.getElementById('finish');
+        finishButton.addEventListener("click", sendResponse);
+    }
+
+    buttonListerner();
 
     socket.on('order.push', (data) => {
         console.log("ORDER ON => ", data);
-        RefreshTable();
+        refreshTable();
     });
 </script>

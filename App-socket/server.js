@@ -40,6 +40,11 @@ const socketEvent = (socket) => {
         socket.broadcast.emit('order.push', { order });
     });
 
+    socket.on("response.push", (response) => {
+        console.log('PUSHING RESPONSE TO CLIENT PAGE');
+        socket.broadcast.emit('response.push', { response });
+    });
+
     socket.on('connect_failed', () => {
         throw 'Connection Failed';
     });
