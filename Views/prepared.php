@@ -111,13 +111,8 @@ include_once("header_base.php");
     $var = json_encode($mix);
     echo "var jsvar ='$var';";
     ?>
-    console.log(jsvar);
-    socket.emit('order.push', jsvar);
-
-    socket.on('response.push', (data) => {
-        console.log("RESPONSE ON => ", data);
-        document.getElementById('status').innerHTML = "Votre commande est prête";
-    });
 </script>
+
+<script src="../App-socket/prepared.js"></script> 
 
 </html>
