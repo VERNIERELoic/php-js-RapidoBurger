@@ -15,9 +15,11 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 # Project Information 
 - Ce projet est basé sur une l'achitechture MVC en php 
 - Nous avons utiliser un router ainsi qu'un autoloader et un renderer
-- Si nous avons le temps, certaines parties fonctionnerons avec une API REST .
+- Utilisation de socket js client/server
+- Calls API externe 
 
- Points d'amelioration :
+ Points d'amelioration possible :
+ - Par manque de temps et de simplicitee la bdd n'est pas des mieux pensee..
 
 ## Fonctionnalitées disponible pour les utilisateurs :
 - Créer un compte
@@ -29,8 +31,8 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 - Personnalisation du Burger avec possibilité de modifier certains ingrediens(Burger unique avec menu )
 
 ## Fonctionnalitées liées aux commandes
-- Les commandes arrivent sur une interface dediées aux cuisiniers (Socket + API si le temps nous le permet)
-- le preparateur de commande dispose d'une interface sur lequel il peut changer le status de la commande et ce status est renvoyé sur la page preparation du client qui peut en suite suivre le status de commande.
+- Les commandes arrivent sur une interface dediées aux cuisiniers
+- le preparateur de commande dispose d'une interface sur lequel il peut Terminer la commande, le clients en ai en suite notifie. (Suivis de commande)
 (Via socket js avec socket.io ).
 ## Model MVC
 Models --> Repo --> Service --> Controller --> View
@@ -55,10 +57,13 @@ CREATE DATABASE rapido;
 exit
 mysql -u [Nom d'utilisateur SQL] -p rapido < data-dump.sql
 ```
-### Clone and run php server
+### Clone and run php server + socket server 
 ```bash
 git clone https://github.com/VERNIERELoic/Rapido.git
 php -S 127.0.0.1:8080/public
+
+cd App-socket
+node server.js
 ```
 ## Dans votre navigateur :
 #### 127.0.0.1:8080/public/
