@@ -24,7 +24,7 @@
                                                 " sauce = ", $combinedResults[$i]["saucemaison"]    ?></td>
                 <td data-label="validate">
                     <div class="wrapper">
-                        <button id="finish" type="submit" value="1" href="#"><span>Terminer</span></button>
+                        <button onclick="showAlert(this)" class="orderbtn" dataid="<?= $combinedResults[$i]['orderid'] ?>" id="finish" type="submit" value="1" href="#"><span>Terminer</span></button>
                     </div>
                 </td>
             </tr>
@@ -38,23 +38,77 @@
 </footer>
 
 <script>
-    function refreshTable() {
-        document.getElementById('orderlist').load("orderlist.php #orderlist");
-    }
+    //newDiv.appendChild(newContent)
 
-    function sendResponse(){
+    function sendResponse() {
         socket.emit('response.push', "Signal : Order finish");
     }
 
-    function buttonListerner() {
-        var finishButton = document.getElementById('finish');
-        finishButton.addEventListener("click", sendResponse);
+    console.log("test");
+    var btn = document.getElementsByClassName("orderbtn");
+    console.log(btn);
+    btn.onclick = showAlert;
+
+    function showAlert(event) {
+        console.log(event);
+        console.log(event.getAttribute('dataid'));
+        console.log(event);
+        sendResponse();
     }
 
-    buttonListerner();
+
+
 
     socket.on('order.push', (data) => {
         console.log("ORDER ON => ", data);
-        refreshTable();
+        console.log(data);
+
+        let object = JSON.parse(data.order)
+        console.log(object);
+        let date = object[0].date;
+        let orderid = object[0].orderid;
+        let userid = object[0].userid;
+        let pain = object[1].pain;
+        console.log(pain);
+        let legumes = object[1].legumes;
+        console.log(legumes);
+        let steakveg = object[1].steakveg;
+        console.log(steakveg);
+        let saucemaison = object[1].saucemaison;
+        console.log(saucemaison);
+
+        let newtab = document.createElement("tr");
+        console.log('newtab ok');
+
+        let tddate = document.createElement("td");
+        let tdorderid = document.createElement("td");
+        let tdusername = document.createElement("td");
+        let tdproduct = document.createElement("td");
+        let div = document.createElement('div');
+        div.classList.add("wrapper");
+        let btnfinish = document.createElement("button");
+        let span = document.createElement("span");
+        btnfinish.setAttribute('id', 'finish');
+        btnfinish.setAttribute('type', 'submit');
+
+        tddate.innerHTML = date;
+        tdorderid.innerHTML = orderid;
+        tdusername.innerHTML = userid;
+        tdproduct.innerHTML = "Pain = " + pain + " leg = " + legumes + " steak = " + steakveg + " sauce = " + saucemaison;
+        span.innerHTML = "Terminer";
+
+        let currenttab = document.getElementById('orderlist');
+
+        newtab.appendChild(tddate);
+        newtab.appendChild(tdorderid);
+        newtab.appendChild(tdusername);
+        newtab.appendChild(tdproduct);
+        newtab.appendChild(div);
+        newtab.appendChild(btnfinish);
+        newtab.appendChild(span);
+
+        div.appendChild(btnfinish);
+        btnfinish.appendChild(span);
+        currenttab.appendChild(newtab);
     });
 </script>

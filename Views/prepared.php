@@ -102,12 +102,17 @@ include_once("header_base.php");
         </div>
         <div class="bar"></div>
         <div id="status" class="text">En preparation ... </div>
-        <div class="text">Commande n° <?php echo $orderid ?></div>
+        <div class="text">Commande n° <?php $object = $mix[0]; echo $object->orderid; ?></div>
     </div>
 </body>
 
 <script>
-    socket.emit('order.push', "Signal : New order");
+    <?php
+    $var = json_encode($mix);
+    echo "var jsvar ='$var';";
+    ?>
+    console.log(jsvar);
+    socket.emit('order.push', jsvar);
 
     socket.on('response.push', (data) => {
         console.log("RESPONSE ON => ", data);

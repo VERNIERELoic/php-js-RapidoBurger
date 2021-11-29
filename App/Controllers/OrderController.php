@@ -13,8 +13,8 @@ class OrderController extends Controller
     public function order()
     {
         $ticket = new TicketService();
-        $orderid = $ticket->registeBurger();
-        echo Renderer::render("prepared.php", compact(('orderid')));
+        $mix = $ticket->registeBurger();
+        echo Renderer::render("prepared.php", compact('mix'));
         return;
     }
 }
