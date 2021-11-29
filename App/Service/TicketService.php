@@ -36,7 +36,7 @@ class TicketService extends Service
             $orderid
         );
         $burgerrepo->insertBurger($burger, $orderid); #make sql request to insert burger in bdd
-
-        return $orderid;
+        $mix = [$order, $burger];
+        return $mix;
     }
 }

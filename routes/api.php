@@ -29,3 +29,7 @@ $router->post('/resetpsswd', "AuthController@resetpsswd");
 
 #modify routes
 $router->get('/modify', "PageController@viewModify");
+
+#routes orders listes 
+$router->get('/orderlist', "PageController@viewOrderlist");
+

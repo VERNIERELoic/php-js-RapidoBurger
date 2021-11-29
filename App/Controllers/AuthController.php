@@ -15,6 +15,7 @@ class AuthController extends Controller
         echo Renderer::render("register.php");
         return;
     }
+
     public function register()
     {
         $authrepo = new AuthService();
@@ -45,7 +46,8 @@ class AuthController extends Controller
     public function resetpsswd()
     {
         $resetrepo = new ResetRepo();
-        $resetrepo->sendMail();
+        $email = $resetrepo->sendMail();
+        echo Renderer::render("emailsend.php", compact('email'));
         return;
     }
 }

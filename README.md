@@ -8,15 +8,21 @@ CPE Lyon - Projet web 4ICS
 
 Le theme que nous avons choisi est une platform de commande pour un fast foot spécialisé dans le burger. Le site web mettra a disposition des utilisateurs et gerants un espace membre ainsi qu'une interface de configuration du burger.
 
+<span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le deploiement :  </span>
+
+ http://rapido.loicverniere.tk
+
 # Project Information 
 - Ce projet est basé sur une l'achitechture MVC en php 
 - Nous avons utiliser un router ainsi qu'un autoloader et un renderer
 - Si nous avons le temps, certaines parties fonctionnerons avec une API REST .
 
+ Points d'amelioration :
+
 ## Fonctionnalitées disponible pour les utilisateurs :
 - Créer un compte
 - Se connecter / deconnecter
-- Récuperation de mdp par email (Sans lien unique manque de temps :/ )
+- Récuperation de mdp par email
 - modification du compte (mdp, username ...)
 
 ## Fonctionnalitées liées aux Burgers :
@@ -24,12 +30,20 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 
 ## Fonctionnalitées liées aux commandes
 - Les commandes arrivent sur une interface dediées aux cuisiniers (Socket + API si le temps nous le permet)
-
+- le preparateur de commande dispose d'une interface sur lequel il peut changer le status de la commande et ce status est renvoyé sur la page preparation du client qui peut en suite suivre le status de commande.
+(Via socket js avec socket.io ).
 ## Model MVC
 Models --> Repo --> Service --> Controller --> View
 
 # Lancer le projet rapido
 
+## Dépendences 
+
+socket.io
+ ```bash
+ npm init dans le dossier App-socket
+ npm install express && npm install socket.io
+ ```
 ## Cration de la bdd
 **BDD utilisée : Mariadb**
 

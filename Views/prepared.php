@@ -3,7 +3,10 @@
 
 <?php
 
-include_once("header_prepared.php") ?>
+include_once("header_prepared.php");
+include_once("header_base.php");
+
+?>
 
 <body>
     <div class="loader-wrap">
@@ -98,9 +101,18 @@ include_once("header_prepared.php") ?>
             </div>
         </div>
         <div class="bar"></div>
-        <div class="text">En preparation ... </div>
-        <div class="text">Commande n° <?php echo $orderid ?></div>
+        <div id="status" class="text">En preparation ... </div>
+        <div class="text">Commande n° <?php $object = $mix[0]; echo $object->orderid; ?></div>
     </div>
 </body>
+
+<script>
+    <?php
+    $var = json_encode($mix);
+    echo "var jsvar ='$var';";
+    ?>
+</script>
+
+<script src="../App-socket/prepared.js"></script> 
 
 </html>
