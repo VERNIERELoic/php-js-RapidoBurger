@@ -80,7 +80,6 @@ class UserRepo extends BaseRepo
         $request = self::$bdd->prepare($sql);
         $request->execute(array($username));
         $isadmin = $request->fetch();
-        var_dump(intval($isadmin));
         return intval($isadmin);
     }
 }

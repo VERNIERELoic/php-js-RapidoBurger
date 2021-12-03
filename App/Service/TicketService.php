@@ -39,4 +39,9 @@ class TicketService extends Service
         $mix = [$order, $burger];
         return $mix;
     }
+
+    public function setOrderFinished($orderid){
+        $orderrepo = new OrderRepo();
+        $orderrepo->setOrderStatus(1, $orderid);
+    }
 }

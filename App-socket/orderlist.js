@@ -1,21 +1,21 @@
-function sendResponse() {
-    socket.emit('response.push', "Signal : Order finish");
+function sendResponse(username) {
+    socket.emit('response.push', "Signal : Order finish", username);
 }
 
-console.log("test");
+function deleteLine(event){
+    let lineid = event.getAttribute('dataid');
+    let line = document.getElementById(lineid);
+    line.remove();
+}
+
 var btn = document.getElementsByClassName("orderbtn");
-console.log(btn);
 btn.onclick = showAlert;
+btn.onclick = deleteLine;
 
 function showAlert(event) {
-    console.log(event);
-    console.log(event.getAttribute('dataid'));
-    console.log(event);
-    sendResponse();
+    sendResponse(event.getAttribute('userid'));
+    deleteLine(event);
 }
-
-
-
 
 socket.on('order.push', (data) => {
     console.log("ORDER ON => ", data);
@@ -41,6 +41,9 @@ socket.on('order.push', (data) => {
     let span = document.createElement("span");
     btnfinish.setAttribute('id', 'finish');
     btnfinish.setAttribute('type', 'submit');
+    btnfinish.setAttribute('onclick', 'showAlert(this)');
+    btnfinish.setAttribute('class', 'orderbtn');
+    btnfinish.setAttribute('dataid', '<?= $combinedResults[$i]["orderid"] ?>');
 
     tddate.innerHTML = date;
     tdorderid.innerHTML = orderid;
