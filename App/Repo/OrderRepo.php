@@ -68,4 +68,10 @@ class OrderRepo extends BaseRepo
         $response = $req->fetch();
         return $response['orderid'];
     }
+
+    public function setOrderStatus($status, $orderid){
+            $sql = "UPDATE orders SET status = ? WHERE orderid = ?";
+            $req = self::$bdd->prepare($sql);
+            $response = $req->execute(array($status, $orderid));
+    }
 }

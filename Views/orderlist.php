@@ -14,7 +14,7 @@
     <tbody id="orderlist">
         <?php $i = 0; ?>
         <?php foreach ($combinedResults as $row) { ?>
-            <tr>
+            <tr id="<?= $combinedResults[$i]['orderid'] ?>" >
                 <td data-label="date"><?php echo $combinedResults[$i]["date"]; ?></td>
                 <td data-label="orderid"><?php echo $combinedResults[$i]["orderid"]; ?></td>
                 <td data-label="user"><?php echo $combinedResults[$i]["username"];  ?></td>
@@ -24,7 +24,7 @@
                                                 " sauce = ", $combinedResults[$i]["saucemaison"]    ?></td>
                 <td data-label="validate">
                     <div class="wrapper">
-                        <button onclick="showAlert(this)" class="orderbtn" dataid="<?= $combinedResults[$i]['orderid'] ?>" id="finish" type="submit" value="1" href="#"><span>Terminer</span></button>
+                        <button onclick="showAlert(this)" class="orderbtn" userid="<?= $combinedResults[$i]['username'] ?>" dataid="<?= $combinedResults[$i]['orderid'] ?>" id="finish" type="submit" value="1"><span>Terminer</span></button>
                     </div>
                 </td>
             </tr>
@@ -36,5 +36,3 @@
 <footer>
     <a>VERNIERE Loic - All right reserved 2021</a>
 </footer>
-
-<script src="../App-socket/orderlist.js"></script> 

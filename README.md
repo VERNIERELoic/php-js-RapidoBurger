@@ -12,6 +12,11 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 
  http://rapido.loicverniere.tk
 
+ # Modifications depuis RDV avec A.Becker 
+- Ajout de rooms afin d'affiner les reponses vers les utilisateurs
+- Changement du status des commandes après click sur terminer
+- Suppression des commandes dans le tableau après click terminé
+ 
 # Project Information 
 - Ce projet est basé sur une l'achitechture MVC en php 
 - Nous avons utiliser un router ainsi qu'un autoloader et un renderer

@@ -22,11 +22,7 @@
     $isconnected = $_SESSION['username'];
 
     if (isset($isconnected) && $isadmin == 0) { ?>
-        <script>
-            const socket = io('127.0.0.1:3000');
-            socket.emit('login', "<?php print($_SESSION['username']); ?>");
-            console.log('connected', socket);
-        </script>
+        <script src="../App-socket/login.js"></script>
 
         <head>
             <nav>
@@ -44,7 +40,7 @@
                 </div>
                 </li>
                 </div>
-                <li class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
+                <li onclick="showAlert(this)" id="logout" class="nav-suscribe"><a class="log" href="/public/logout">Deconnexion</a></li>
                 </div>
                 </ul>
             </nav>
@@ -97,3 +93,4 @@
     <?php } ?>
 
 </html>
+<script src="../App-socket/logout.js"></script>
