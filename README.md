@@ -13,6 +13,7 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
  http://rapido.loicverniere.tk
 
  # Modifications depuis RDV avec A.Becker 
+- Les sockets fonctionnent avec des cors
 - Ajout de rooms afin d'affiner les reponses vers les utilisateurs
 - Changement du status des commandes après click sur terminer
 - Suppression des commandes dans le tableau après click terminé
