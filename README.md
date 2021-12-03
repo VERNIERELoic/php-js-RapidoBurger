@@ -10,7 +10,7 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 
 <span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le deploiement :  </span>
 
- http://rapido.loicverniere.tk
+ http://rapido.loicverniere.tk (bientôt en ligne)
 
  # Modifications depuis RDV avec A.Becker 
 - Les sockets fonctionnent avec des cors
