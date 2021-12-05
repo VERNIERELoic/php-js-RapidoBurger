@@ -6,9 +6,9 @@
 # Rapido project
 CPE Lyon - Projet web 4ICS 
 
-Le theme que nous avons choisi est une platform de commande pour un fast foot spécialisé dans le burger. Le site web mettra a disposition des utilisateurs et gerants un espace membre ainsi qu'une interface de configuration du burger.
+Le thême que nous avons choisi est une platforme de commande pour un fast foot spécialisée dans le burger. Le site web mettra a disposition des utilisateurs et gérants un espace membre ainsi qu'une interface de configuration du burger.
 
-<span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le deploiement :  </span>
+<span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le déploiement :  </span>
 
  http://rapido.loicverniere.tk (bientôt en ligne)
 
@@ -25,25 +25,26 @@ Le theme que nous avons choisi est une platform de commande pour un fast foot sp
 - Calls API externe 
 
  Points d'amelioration possible :
- - Par manque de temps et de simplicitee la bdd n'est pas des mieux pensee..
+ - Par manque de temps et de simplicitee la bdd n'est pas des mieux pensée...
 
 ## Fonctionnalitées disponible pour les utilisateurs :
 - Créer un compte
 - Se connecter / deconnecter
 - Récuperation de mdp par email
-- modification du compte (mdp, username ...)
+- Modification du compte (mdp, username ...)
 
 ## Fonctionnalitées liées aux Burgers :
-- Personnalisation du Burger avec possibilité de modifier certains ingrediens(Burger unique avec menu )
+- Personnalisation du Burger avec possibilité de modifier certains ingredients (Burger unique avec menu)
 
 ## Fonctionnalitées liées aux commandes
 - Les commandes arrivent sur une interface dediées aux cuisiniers
 - le preparateur de commande dispose d'une interface sur lequel il peut Terminer la commande, le clients en ai en suite notifie. (Suivis de commande)
 (Via socket js avec socket.io ).
+
 ## Model MVC
 Models --> Repo --> Service --> Controller --> View
 
-# Lancer le projet rapido
+# Tuto pour lancer le projet Rapido
 
 ## Dépendences 
 
