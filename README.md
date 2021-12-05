@@ -46,7 +46,7 @@ Models --> Repo --> Service --> Controller --> View
 
 # Tuto pour lancer le projet Rapido
 
-## Dépendences 
+## Dépendences 
 
 socket.io
  ```bash
