@@ -28,6 +28,7 @@ Le thême que nous avons choisi est une platforme de commande pour un fast foot 
  - Par manque de temps et de simplicitee la bdd n'est pas des mieux pensée...
 
 ## Fonctionnalitées disponible pour les utilisateurs :
+Compte test : y.joly / 123$ (reset mdp sur mail cpe)
 - Créer un compte
 - Se connecter / deconnecter
 - Récuperation de mdp par email
@@ -74,6 +75,8 @@ node server.js
 ```
 ## Dans votre navigateur :
 #### 127.0.0.1:8080/public/
+
+
 
 
 
