@@ -65,8 +65,8 @@
                         <li class="nav-icon"><img src="/public/ressources/images/home/user.png"></li>
                         <li class="nav-login"><a class="log""><?php echo $_SESSION['username'] ?></a>
                     <ul class=" dropdown">
-                        <li><a href="/public/myorders">Commandes</a></li>
-                        <li><a href="/public/modify">Modifier profile</a></li>
+                        <li><a href="/public/myorders">Mes Commandes</a></li>
+                        <li><a href="/public/modify">Modifier profil</a></li>
                 </ul>
                 </li>
                 </div>
