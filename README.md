@@ -63,7 +63,8 @@ ainsi qu'une bbd nomée "rapido"
 mysql -u root -p
 CREATE DATABASE rapido;
 exit
-mysql -u [Nom d'utilisateur SQL] -p rapido < data-dump.sql
+mysql -u [Nom d'utilisateur SQL] -p rapido < rapido-dump.sql
+Attention de modifier les logs dans la class de connexion php !!!!
 ```
 ### Clone and run php server + socket server 
 ```bash
