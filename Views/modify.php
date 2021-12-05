@@ -5,7 +5,7 @@
 
 <div class="modify">
     <form action="/public/modify" method="POST">
-        <h1>MOdifier mon profile</h1>
+        <h1>Modifier mon profil</h1>
 
         
 
