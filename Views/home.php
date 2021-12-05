@@ -16,7 +16,7 @@
 
     <article class="decouvrir">
         <h2>Nous decrouvrir</h2>
-        <p>Bienvenue sur Burger House, la reference du burger a Lyon, venez nous decourvrir au 112 cours gambetta nous
+        <p>Bienvenue sur Burger House, la réference du burger a Lyon, venez nous decourvrir au 112 cours gambetta, nous
             vous accueillerons avec plaisir</br>
         </p>
     </article>
