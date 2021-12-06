@@ -10,7 +10,7 @@ Le thême que nous avons choisi est une platforme de commande pour un fast foot 
 
 <span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le déploiement :  </span>
 
- http://rapido.loicverniere.tk (bientôt en ligne)
+http://rapido.lvernierecloud.tk/
 
  # Modifications depuis RDV avec A.Becker 
 - Les sockets fonctionnent avec des cors
