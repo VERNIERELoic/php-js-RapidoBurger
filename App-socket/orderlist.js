@@ -39,12 +39,13 @@ socket.on('order.push', (data) => {
     div.classList.add("wrapper");
     let btnfinish = document.createElement("button");
     let span = document.createElement("span");
+    newtab.setAttribute('id', orderid)
     btnfinish.setAttribute('id', 'finish');
     btnfinish.setAttribute('type', 'submit');
     btnfinish.setAttribute('onclick', 'showAlert(this)');
     btnfinish.setAttribute('class', 'orderbtn');
-    btnfinish.setAttribute('dataid', '<?= $combinedResults[$i]["orderid"] ?>');
-    btnfinish.setAttribute('userid', '<?= $combinedResults[$i]["username"] ?>');
+    btnfinish.setAttribute('dataid', orderid);
+    btnfinish.setAttribute('userid', username);
 
     tddate.innerHTML = date;
     tdorderid.innerHTML = orderid;
