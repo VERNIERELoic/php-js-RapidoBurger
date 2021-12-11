@@ -8,7 +8,7 @@ CPE Lyon - Projet web 4ICS
 
 Le thême que nous avons choisi est une platforme de commande pour un fast foot spécialisée dans le burger. Le site web mettra a disposition des utilisateurs et gérants un espace membre ainsi qu'une interface de configuration du burger.
 
-<span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le déploiement :  </span>
+<span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le déploiement : </span> http://rapido.lvernierecloud.tk
 
 
  # Modifications depuis RDV avec A.Becker 
