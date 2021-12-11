@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Repo\OrderRepo;
 use App\Repo\BurgerRepo;
+use App\Repo\UserRepo;
 
 
 class TicketService extends Service
@@ -22,6 +23,7 @@ class TicketService extends Service
 
         $burgerrepo = new BurgerRepo();
         $orderrepo = new OrderRepo();
+        $userrepo = new UserRepo();
 
         
         $order = $orderrepo->setOrder($userid, $date);
@@ -35,8 +37,10 @@ class TicketService extends Service
             intval($_POST['saucemaison'] ?? 0),
             $orderid
         );
+        $username = $userrepo->getUsername($userid);
+        
         $burgerrepo->insertBurger($burger, $orderid); #make sql request to insert burger in bdd
-        $mix = [$order, $burger];
+        $mix = [$order, $burger, $username];
         return $mix;
     }
 

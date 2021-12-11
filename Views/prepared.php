@@ -102,7 +102,7 @@ include_once("header_base.php");
         </div>
         <div class="bar"></div>
         <div id="status" class="text">En preparation ... </div>
-        <div class="text">Commande n° <?php $object = $mix[0]; echo $object->orderid; ?></div>
+        <div class="text">Commande n° <?php $object = $mix[0]; echo $object->orderid;?></div>
     </div>
 </body>
 
@@ -113,6 +113,5 @@ include_once("header_base.php");
     ?>
 </script>
 
-<script src="../App-socket/prepared.js"></script> 
-
+<script src="../App-socket/prepared.js"></script>
 </html>

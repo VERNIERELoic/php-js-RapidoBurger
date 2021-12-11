@@ -23,7 +23,7 @@ socket.on('order.push', (data) => {
     let object = JSON.parse(data.order)
     let date = object[0].date;
     let orderid = object[0].orderid;
-    let userid = object[0].userid;
+    let username = object[2].username;
     let pain = object[1].pain;
     let legumes = object[1].legumes;
     let steakveg = object[1].steakveg;
@@ -44,10 +44,11 @@ socket.on('order.push', (data) => {
     btnfinish.setAttribute('onclick', 'showAlert(this)');
     btnfinish.setAttribute('class', 'orderbtn');
     btnfinish.setAttribute('dataid', '<?= $combinedResults[$i]["orderid"] ?>');
+    btnfinish.setAttribute('userid', '<?= $combinedResults[$i]["username"] ?>');
 
     tddate.innerHTML = date;
     tdorderid.innerHTML = orderid;
-    tdusername.innerHTML = userid;
+    tdusername.innerHTML = username;
     tdproduct.innerHTML = "Pain = " + pain + " leg = " + legumes + " steak = " + steakveg + " sauce = " + saucemaison;
     span.innerHTML = "Terminer";
 

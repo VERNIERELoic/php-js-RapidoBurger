@@ -33,6 +33,15 @@ class UserRepo extends BaseRepo
         return $data;
     }
 
+    public function getUsername($id) #Get specific user from his ID
+    {
+        $sql = "SELECT username FROM users WHERE id = ?";
+        $req = self::$bdd->prepare($sql);
+        $req->execute(array($id));
+        $username = $req->fetch();
+        return $username;
+    }
+
     public function getUserInfo($username) #Get specific userID from username 
     {
         $sql = "SELECT id, password FROM users WHERE username = ?";

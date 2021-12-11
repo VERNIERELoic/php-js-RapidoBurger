@@ -24,7 +24,7 @@
                                                 " sauce = ", $combinedResults[$i]["saucemaison"]    ?></td>
                 <td data-label="validate">
                     <div class="wrapper">
-                        <button onclick="showAlert(this)" class="orderbtn" userid="<?= $combinedResults[$i]['username'] ?>" dataid="<?= $combinedResults[$i]['orderid'] ?>" id="finish" type="submit" value="1"><span>Terminer</span></button>
+                    <button onclick="showAlert(this)" class="orderbtn" userid="<?= $combinedResults[$i]['username'] ?>" dataid="<?= $combinedResults[$i]['orderid'] ?>" id="finish" type="submit" value="1"><span>Terminer</span></button>
                     </div>
                 </td>
             </tr>
@@ -33,6 +33,7 @@
     </tbody>
 </table>
 
+<script src="../App-socket/orderlist.js"></script> 
 <footer>
     <a>VERNIERE Loic - All right reserved 2021</a>
 </footer>

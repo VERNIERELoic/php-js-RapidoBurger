@@ -91,6 +91,4 @@
             </nav>
         </head>
     <?php } ?>
-
 </html>
-<script src="../App-socket/logout.js"></script>
