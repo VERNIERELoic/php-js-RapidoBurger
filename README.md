@@ -6,7 +6,7 @@
 # Rapido project
 CPE Lyon - Projet web 4ICS 
 
-Le thême que nous avons choisi est une platforme de commande pour un fast foot spécialisée dans le burger. Le site web mettra a disposition des utilisateurs et gérants un espace membre ainsi qu'une interface de configuration du burger.
+Le thême que nous avons choisi est une platforme de commande pour un fast foot spécialisé dans le burger. Le site web mettra a disposition des utilisateurs et gérants un espace membre ainsi qu'une interface de configuration du burger.
 
 <span style="color:red;"> Lien vers la demo du projet en ligne pour eviter le déploiement : </span> http://rapido.lvernierecloud.tk
 
@@ -24,7 +24,7 @@ Le thême que nous avons choisi est une platforme de commande pour un fast foot 
 - Calls API externe 
 
  Points d'amelioration possible :
- - Par manque de temps et de simplicitee la bdd n'est pas des mieux pensée...
+ - Par manque de temps et de simplicité la bdd n'est pas des mieux pensée...
 
 ## Fonctionnalitées disponible pour les utilisateurs :
 Compte test : y.joly / 123$ (reset mdp sur mail cpe)
@@ -38,7 +38,7 @@ Compte test : y.joly / 123$ (reset mdp sur mail cpe)
 
 ## Fonctionnalitées liées aux commandes
 - Les commandes arrivent sur une interface dediées aux cuisiniers
-- le preparateur de commande dispose d'une interface sur lequel il peut Terminer la commande, le clients en ai en suite notifie. (Suivis de commande)
+- le preparateur de commande dispose d'une interface sur lequel il peut Terminer la commande, le clients en est en suite notifié. (Suivis de commande)
 (Via socket js avec socket.io ).
 
 ## Model MVC
